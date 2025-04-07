@@ -3,6 +3,7 @@
   <div class="container-fluid h-100">
     <div class="row h-100 align-items-center justify-content-center">
       <div class="col-12 col-xl-10">
+        <h1 class="text-center mb-4">EVALUACIONES</h1>
         <div class="table-responsive">
       <table class="table table-bordered">
         <thead>
