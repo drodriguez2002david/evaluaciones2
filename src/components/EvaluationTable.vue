@@ -182,7 +182,7 @@ export default {
 }
 
 /* Color de fondo para la columna TEMA */
-.table tr th:nth-child(2),
+.table tr th:nth-child(2):not(:nth-child(3)),
 .table tr td:nth-child(2) {
   background-color: #eafaf1;
 }
