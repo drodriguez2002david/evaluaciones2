@@ -3,7 +3,10 @@
   <div class="container-fluid h-100">
     <div class="row h-100 align-items-center justify-content-center">
       <div class="col-12 col-xl-10">
-        <h1 class="text-center mb-4">EVALUACIONES</h1>
+        <div class="text-center mb-4">
+          <img src="ICONO-AIDIN-512.png" alt="Logo" class="img-fluid mb-3" style="max-width: 150px;">
+          <h1>EVALUACIONES</h1>
+        </div>
         <div class="table-responsive">
       <table class="table table-bordered">
         <thead>
