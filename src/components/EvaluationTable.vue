@@ -5,7 +5,7 @@
         <div class="col-12 col-xl-10">
           <div class="text-center mb-4">
             <img src="ICONO-AIDIN-512.png" alt="Logo" class="img-fluid mb-3" style="max-width: 75px;">
-            <h1 style="font-family: 'Slabo 27px', serif;">EVALUACIONES</h1>
+            <h1 style="font-family: 'Slabo 27px', serif; font-weight: bold;">EVALUACIONES</h1>
           </div>
           <div class="table-responsive">
             <table class="table table-bordered">
