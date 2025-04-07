@@ -11,8 +11,10 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--background-color);
+  background-color: #ebf5fb !important;
   color: var(--text-color);
+  margin: 0;
+  padding: 0;
 }
 
 #app {
