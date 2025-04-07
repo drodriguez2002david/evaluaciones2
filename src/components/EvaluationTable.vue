@@ -180,4 +180,10 @@ export default {
   text-align: center;
   vertical-align: middle;
 }
+
+/* Color de fondo para la columna TEMA */
+.table th:nth-child(2),
+.table td:nth-child(2) {
+  background-color: #eafaf1;
+}
 </style>
