@@ -145,6 +145,8 @@ export default {
   left: 0;
   background: white;
   z-index: 1;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .status-circle {
