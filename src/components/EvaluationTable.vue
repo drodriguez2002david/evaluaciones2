@@ -183,6 +183,7 @@ export default {
 .table td {
   text-align: center;
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 /* Color de fondo para la columna TEMA */
