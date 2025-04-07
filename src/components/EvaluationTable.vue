@@ -175,6 +175,7 @@ export default {
   margin-bottom: 0;
   width: 100%;
   font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
 }
 
 .table th,
