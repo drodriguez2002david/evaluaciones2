@@ -1,4 +1,19 @@
+
 @import "./base.css";
+
+:root {
+  --primary-color: #004d98;
+  --secondary-color: #0077cc;
+  --accent-color: #ff9800;
+  --background-color: #f8f9fa;
+  --text-color: #333333;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
 
 #app {
   width: 100%;
@@ -6,31 +21,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: normal;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+.table thead {
+  background-color: var(--primary-color);
+  color: white;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.table tbody tr:hover {
+  background-color: rgba(0, 77, 152, 0.05);
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.container-fluid {
+  padding: 2rem;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+.table {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 1rem;
   }
 }
