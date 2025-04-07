@@ -12,13 +12,14 @@
         <thead>
           <tr>
             <th class="fixed-column" rowspan="2">ALUMNOS</th>
-            <th rowspan="2" style="vertical-align: top;">EL CICLO DEL AGUA</th>
+            <th>TEMA</th>
             <th colspan="2">ACERTIJO</th>
             <th>ESQUEMA</th>
             <th colspan="2">EXPLICA EL ALUMNO</th>
             <th colspan="5">CODING</th>
           </tr>
           <tr>
+            <th>EL CICLO DEL AGUA</th>
             <th>Acertijo 1</th>
             <th>Acertijo 2</th>
             <th>Esquema 1</th>
