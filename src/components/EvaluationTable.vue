@@ -1,7 +1,9 @@
 
 <template>
-  <div class="container-fluid h-100 d-flex align-items-center justify-content-center">
-    <div class="table-responsive">
+  <div class="container-fluid h-100">
+    <div class="row h-100 align-items-center justify-content-center">
+      <div class="col-12 col-xl-10">
+        <div class="table-responsive">
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -71,6 +73,8 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
       </div>
     </div>
   </div>
