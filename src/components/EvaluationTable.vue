@@ -85,9 +85,9 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap'
+import * as bootstrap from 'bootstrap'
 
 export default {
   name: 'EvaluationTable',
@@ -129,8 +129,9 @@ export default {
     }
 
     const openModal = (student, activity) => {
-      selectedActivity.value = activity
-      const modal = new bootstrap.Modal(document.getElementById('evaluationModal'))
+      selectedActivity.value = {...activity, studentName: student.name}
+      const modalElement = document.getElementById('evaluationModal')
+      const modal = new bootstrap.Modal(modalElement)
       modal.show()
     }
 
