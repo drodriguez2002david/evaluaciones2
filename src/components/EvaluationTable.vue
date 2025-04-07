@@ -154,12 +154,15 @@ export default {
 
 .table-responsive {
   max-height: 80vh;
-  max-width: 90%;
+  width: 95%;
+  max-width: 1400px;
   margin: 0 auto;
   overflow: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .table {
   margin-bottom: 0;
+  width: 100%;
 }
 </style>
