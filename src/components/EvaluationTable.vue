@@ -158,8 +158,8 @@ export default {
 
 .table-responsive {
   max-height: 80vh;
-  width: 95%;
-  max-width: 1400px;
+  width: 90%;
+  max-width: 90%;
   margin: 0 auto;
   overflow: auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
