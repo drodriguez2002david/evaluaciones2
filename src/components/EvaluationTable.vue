@@ -1,8 +1,8 @@
 <template>
-  <div class="jumbotron">
-    <div class="container-fluid h-100">
-      <div class="row h-100 align-items-center justify-content-center">
-        <div class="col-12 col-xl-10">
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-12 col-xl-10 text-center">
           <div class="text-center mb-4">
             <img src="ICONO-AIDIN-512.png" alt="Logo" class="img-fluid mb-3" style="max-width: 150px;">
             <h1>EVALUACIONES</h1>
