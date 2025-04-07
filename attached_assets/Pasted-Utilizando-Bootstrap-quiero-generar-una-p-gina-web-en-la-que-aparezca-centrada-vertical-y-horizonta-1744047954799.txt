@@ -1,0 +1,69 @@
+Utilizando Bootstrap, quiero generar una página web en la que aparezca centrada vertical y horizontalmente una tabla que refleje las evaluaciones de los alumnos. 
+DESCRIPCIÓN DE LA TABLA
+La primera columna de la tabla mostrará el nombre y apellidos de los alumnos de clase ordenados alfabéticamente. El encabezado th de esa columna pondrá ALUMNOS. Esta primera columna se quedará fija mientras el resto de columnas se desplazarán por debajo e ella para facilitar la lectura de la tabla en caso de que esta supere el tamaño de la página en la que está colocada.
+La segunda columna marcará el título de TEMA que se está trabajando para delimitarlo claramente con respecto a los demás temas. Por ejemplo en este caso el tema será EL CICLO DEL AGUA.
+Las siguientes columnas funcionarán dividiéndose en cuatro bloques, cada uno referido a un tipo de actividad: ACERTIJO; ESQUEMA; EXPLICA EL ALUMNO; CODING; El encabezado de cada una de ellas está dividido en varias celdas. En la superior aparecerá el nombre de la actidad (ACERTIJO; ESQUEMA; EXPLICA EL ALUMNO; CODING) y la inferior aparecerá dividida tantas veces como versiones de cada actividad vayan apareciendo en cada tema. Cada una de estas versiones conformarán las columnas que después irán recibiendo, asociadas al alumno, una evaluación o nota.
+Vamos a partir de un ejemplo de división:
+ENCABEZADO DE ACTIVIDAD 1: ACERTIJO
+
+VERSIONES DE ACERTIJO: 
+ACERTIJO 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?
+ACERTIJO2: Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?
+
+ENCABEZADO DE ACTIVIDAD 2: ESQUEMA
+VERSIONES DE ESQUEMA:
+ESQUEMA 1: El viaje de una gota de agua.
+
+ENCABEZADO DE ACTIVIDAD 3: EXPLICA EL ALUMNO
+VERSIONES DE EXPLICA EL ALUMNO:
+EXPLICA EL ALUMNO 1: ¿Por qué los mares no se desbordan?
+EXPLICA EL ALUMNO 2: ¿Por qué el mar es salado?
+
+ENCABEZADO DE ACTIVIDAD 4: CODING
+VERSIONES DE CODING:
+CODING 1: CONDENSACIÓN
+CODING 2: NUBES
+CODING 3: PRECIPITACIÓN
+CODING 4: ESCORRENTÍA
+CODING 5: EVAPORACIÓN
+Esa sería la estructura básica.
+Si hubiera más temas al finalizar este se repetiría la estructura.
+Si en el tema hubiera secciones con menos versiones se reduciría el número de columnas de evaluación.
+Un filtro permitiría plegar toda la tabla para ver únicamente las columnas relacionadas con el tema correspondiente.
+Estos son los enlaces a los chats de cada actividad:
+ACERTIJO 1: https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8
+ACERTIJO 2: https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=9
+ESQUEMA 1: https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=14
+EXPLICA EL ALUMNO 1: https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=11
+EXPLICA EL ALUMNO 2: https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=10
+CODING 1: https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=21
+CODING 2: https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=22
+CODING 3: https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=23
+CODING 4: https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=24
+CODING 5: https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=25
+
+OPCIONES VISUALES EN CADA CASILLA DE EVALUACIÓN
+En la tabla habrá cinco posibilidades visuales en forma de círculo que aparecerán en cada casilla de evaluación al lado de cada nota. Son las siguientes: Un círculo gris claro si la actividad correspondiente a la nota no ha sido aún activada; un círculo rojo si la actividad ya ha sido activada pero está pendiente de entregar por parte del alumno; un círculo azul claro si la actividad ha sido entregada por el alumno pero no evaluada por la IA; un círculo azul oscuro si la actividad ha sido ya corregida por AIDIN pero no por el profesor; y por último un círculo verde cuando el profesor haya corroborado o modificado la nota que AIDIN ha dado a la actividad.
+En los tres primeros casos la nota no existe, por lo que se reflejará con un guión o línea en la tabla y a continuación su círculo correspondiente. El los casos cuarto y quinto sí aparecerá una nota numérica del 0 al 10, siendo el aprobado a partir de 5. 
+El profesor puede pinchar sobre cualquiera de los círculos. En todos los casos se abrirá una ventana modal que variará según el color del círculo correspondiente. En los 2 primeros la ventana modal reflejará un mensaje que informará sobre el estado de la actividad: 
+	Con círculo gris: La actividad no ha sido aún activada.
+	Con círculo rojo: La actividad está pendiente de entrega por parte del alumno.
+En la ventana modal que se abra al hacer clic sobre el círculo azul claro se deben recoger los siguientes elementos:  
+-Un iframe o cuadro en el que se acceda al chat de la actividad correspondiente, no evaluada por AIDIN.
+-Un campo para la nota obtenida marcado por un guion, porque no ha sido aún evaluado por AIDIN.
+-Un campo en el que el profesor puede añadir su propia nota.
+-Un textarea para añadir comentarios. 
+- Un mensaje "La actividad ha sido entregada por el alumno. Pendiente de evaluar por AIDIN". 
+Si la nota es añadida o modificada por el profesor el círculo pasará a color verde y la nueva nota se reflejará en la tabla.
+
+En la ventana modal que se abra al hacer clic sobre el círculo azul oscuro se deben recoger los siguientes elementos:  
+-Un iframe o cuadro en el que se acceda al chat de la actividad correspondiente, sí evaluada por AIDIN.
+-Un campo para la nota obtenida numéricamente, con el mismo dato de la tabla. A su lado una casilla checklist. Si el profesor marca el checklist quiere decir que acepta la misma nota que ha sugerido AIDIN. 
+-Un campo en el que el profesor puede añadir su propia nota. De primeras aparece con la misma nota numérica que el campo con la evaluación de AIDIN, pero se puede cambiar el dato si el checklist anterior no está activado. Si la nota es aceptada o modificada por el profesor el círculo pasará a color verde y la nueva nota se reflejará en la tabla.
+-Un textarea para añadir comentarios. 
+
+En la ventana modal que se abra al hacer clic sobre el círculo verde oscuro se deben recoger los siguientes elementos:  
+-Un iframe o cuadro en el que se acceda al chat de la actividad correspondiente, ya evaluada por AIDIN.
+-Un campo para la nota numérica valorada por AIDIN. A su lado una casilla checklist. Este campo y checklist ya no se pueden modificar.
+-Un campo en el que el profesor puede modificar su propia nota. De primeras aparece la última nota numérica modificada, pero se puede cambiar el dato por parte del profesor. Una vez modificada o mantenida la nota, el círculo mantendrá su color verde y la nueva nota se reflejará en la tabla.
+-Un textarea para añadir comentarios. 
