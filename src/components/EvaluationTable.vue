@@ -181,8 +181,9 @@ export default {
   vertical-align: middle;
 }
 
-/* Color de fondo para la celda EL CICLO DEL AGUA */
-.table tr:nth-child(2) th:nth-child(1) {
+/* Color de fondo para la columna TEMA */
+.table tr th:nth-child(2),
+.table tr td:nth-child(2) {
   background-color: #eafaf1;
 }
 </style>
