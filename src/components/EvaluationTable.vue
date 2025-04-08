@@ -49,7 +49,7 @@
             </table>
             </div>
             <div class="legend-container ms-4">
-              <h4 class="mb-3" style="font-family: 'Amaranth', sans-serif; font-weight: bold; color: #3b56a1;">ACTIVIDADES</h4>
+              <h4 class="mb-3 text-center" style="font-family: 'Amaranth', sans-serif; font-weight: bold; color: #3b56a1;">ACTIVIDADES</h4>
               <div class="legend-item">
                 <span class="status-circle bg-secondary"></span>
                 <span class="ms-2">No activada</span>
