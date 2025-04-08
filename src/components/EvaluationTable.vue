@@ -255,6 +255,13 @@ export default {
   color: white;
 }
 
+.table thead tr:first-child th:nth-child(5),
+.table thead tr:last-child th:nth-child(5),
+.table thead tr:last-child th:nth-child(6) {
+  background-color: #009742;
+  color: white;
+}
+
 .table tbody tr:hover td {
   background-color: rgba(0, 77, 152, 0.15) !important;
 }
