@@ -61,7 +61,7 @@
                       title="El viaje de una gota de agua">
                       Esquema 1
                   </th>
-                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">Explica 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }" data-bs-toggle="tooltip" title="¿Por qué los mares no se desbordan?">Explica 1</th>
                   <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">Explica 2</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 1</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 2</th>
