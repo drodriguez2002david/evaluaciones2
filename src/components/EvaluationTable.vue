@@ -112,7 +112,9 @@
                       @click="openModal(student, activity, index + 1)"
                       style="cursor: pointer;"
                       class="activity-cell"
-                      :data-cell-type="getCellType(index)">
+                      :data-cell-type="getCellType(index)"
+                      :data-bs-toggle="getCellType(index) === 'explica' && index === 3 ? 'tooltip' : null"
+                      :title="getCellType(index) === 'explica' && index === 3 ? '¿Por qué los mares no se desbordan?' : null">
                     {{ activity.grade || '-' }}
                     <span :class="['status-circle', getStatusClass(activity.status)]"></span>
                   </td>
@@ -163,7 +165,7 @@
                     {{ selectedActivity && selectedActivity.enigmaNumber === 1 ? 'ENIGMA 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' :
                        selectedActivity && selectedActivity.enigmaNumber === 2 ? 'ENIGMA 2: Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?' :
                        selectedActivity && selectedActivity.type === 'esquema' ? 'ESQUEMA 1: El viaje de una gota de agua' :
-                       selectedActivity && selectedActivity.type === 'explica' && (selectedActivity.index === 3 || (selectedActivity.index >= 7 && selectedActivity.index <= 11)) ? 'Escribe el alumno 1: ¿Por qué los mares no se desbordan?' :
+                       selectedActivity && selectedActivity.type === 'explica' && (selectedActivity.index === 3 || (selectedActivity.index >= 7 && selectedActivity.index <= 11)) ? 'Explica el alumno 1: ¿Por qué los mares no se desbordan?' :
                        selectedActivity && selectedActivity.type === 'explica' && (selectedActivity.index === 4 || (selectedActivity.index >= 12 && selectedActivity.index <= 16)) ? 'Explica el alumno 2: ¿Por qué el mar es salado?' : 'Evaluación' }}
                   </h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
