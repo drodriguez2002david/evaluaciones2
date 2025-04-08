@@ -165,7 +165,7 @@
                         selectedActivity.enigmaNumber === 1 ? 'ENIGMA 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' :
                         selectedActivity.enigmaNumber === 2 ? 'ENIGMA 2: Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?' :
                         selectedActivity.type === 'esquema' ? 'ESQUEMA 1: El viaje de una gota de agua' :
-                        selectedActivity.type === 'explica' && selectedActivity.explicaNumber === 1 ? 'EXPLICA EL ALUMNO 1: ¿Por qué los mares no se desbordan?' :
+                        selectedActivity.type === 'explica' && selectedActivity.explicaNumber === 1 ? 'EXPLICA 1: ¿Por qué los mares no se desbordan?' :
                         selectedActivity.type === 'explica' && selectedActivity.explicaNumber === 2 ? 'EXPLICA EL ALUMNO 2: ¿Por qué el mar es salado?' :
                         'Evaluación'
                       )
