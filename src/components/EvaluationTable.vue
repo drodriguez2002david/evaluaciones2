@@ -112,9 +112,7 @@
                       @click="openModal(student, activity, index + 1)"
                       style="cursor: pointer;"
                       class="activity-cell"
-                      :data-cell-type="getCellType(index)"
-                      :data-bs-toggle="index === 3 ? 'tooltip' : null"
-                      :title="index === 3 ? '¿Por qué los mares no se desbordan?' : null">
+                      :data-cell-type="getCellType(index)">
                     {{ activity.grade || '-' }}
                     <span :class="['status-circle', getStatusClass(activity.status)]"></span>
                   </td>
@@ -123,9 +121,7 @@
                       @click="openModal(student, activity, index + 1)"
                       style="cursor: pointer;"
                       class="activity-cell"
-                      :data-cell-type="getCellType(index)"
-                      :data-bs-toggle="index === 3 ? 'tooltip' : null"
-                      :title="index === 3 ? '¿Por qué los mares no se desbordan?' : null">
+                      :data-cell-type="getCellType(index)">
                     {{ activity.grade || '-' }}
                     <span :class="['status-circle', getStatusClass(activity.status)]"></span>
                   </td>
