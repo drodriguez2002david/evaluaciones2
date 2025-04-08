@@ -60,7 +60,7 @@
               </div>
               <div class="legend-item">
                 <span class="status-circle bg-info"></span>
-                <span class="ms-2">Entregada pero no evaluada por Aidin</span>
+                <span class="ms-2">Entregada pero no evaluada por AIDIN</span>
               </div>
               <div class="legend-item">
                 <span class="status-circle bg-primary"></span>
@@ -253,7 +253,7 @@ export default {
 }
 
 .legend-item .status-circle {
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
 }
 </style>
