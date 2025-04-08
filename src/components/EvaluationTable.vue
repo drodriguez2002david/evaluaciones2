@@ -6,6 +6,15 @@
           <div class="text-center mb-4">
             <img src="ICONO-AIDIN-512.png" alt="Logo" class="img-fluid mb-3" style="max-width: 75px;">
             <h1 style="font-family: 'Amaranth', sans-serif; font-weight: bold; color: #3b56a1;">Evaluaciones</h1>
+            <div class="input-group mb-3" style="max-width: 300px; margin: 0 auto;">
+              <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Buscar alumno..." 
+                v-model="searchQuery"
+                @input="handleSearch"
+              >
+            </div>
           </div>
           <div class="d-flex align-items-start flex-column flex-lg-row">
             <div class="table-responsive mb-3 mb-lg-0">
@@ -165,6 +174,7 @@ export default {
     const isExpanded1 = ref(false)
     const isExpanded2 = ref(false)
     const selectedStudent = ref(null)
+    const searchQuery = ref('')
     const students = ref([
       { id: 1, name: 'Patricia Álvarez', activities: Array(10).fill({ status: 'pending', chatUrl: '' }), activities2: Array(10).fill({ status: 'pending', chatUrl: '' }) },
       { id: 2, name: 'Fernando Castro', activities: Array(10).fill({ status: 'submitted', chatUrl: '' }), activities2: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
@@ -225,9 +235,25 @@ export default {
       selectedStudent.value = selectedStudent.value === student.id ? null : student.id;
     }
 
+    const handleSearch = () => {
+      if (searchQuery.value) {
+        selectedStudent.value = null;
+      }
+    }
+
     const filteredStudents = computed(() => {
-      if (!selectedStudent.value) return students.value;
-      return students.value.filter(student => student.id === selectedStudent.value);
+      let result = students.value;
+      
+      if (selectedStudent.value) {
+        result = result.filter(student => student.id === selectedStudent.value);
+      } else if (searchQuery.value) {
+        const query = searchQuery.value.toLowerCase();
+        result = result.filter(student => 
+          student.name.toLowerCase().includes(query)
+        );
+      }
+      
+      return result;
     });
 
     return {
@@ -240,7 +266,9 @@ export default {
       isExpanded2,
       filteredStudents,
       selectedStudent,
-      toggleStudentFilter
+      toggleStudentFilter,
+      searchQuery,
+      handleSearch
     }
   }
 }
