@@ -123,9 +123,7 @@
                       @click="openModal(student, activity, index + 1)"
                       style="cursor: pointer;"
                       class="activity-cell"
-                      :data-cell-type="getCellType(index)"
-                      :data-bs-toggle="getCellType(index) === 'explica' && index === 3 ? 'tooltip' : null"
-                      :title="getCellType(index) === 'explica' && index === 3 ? '¿Por qué los mares no se desbordan?' : null">
+                      :data-cell-type="getCellType(index)">
                     {{ activity.grade || '-' }}
                     <span :class="['status-circle', getStatusClass(activity.status)]"></span>
                   </td>
@@ -266,7 +264,7 @@ export default {
       return 'coding'
     }
 
-    const isExplicaAlumno1 = (index) => index === 3; // Assuming 'Explica el alumno 1' is always the 4th activity (index 3)
+    const isExplicaAlumno1 = (index) => index === 3; 
 
     onMounted(() => {
       import('bootstrap/dist/js/bootstrap.bundle.min.js').then(() => {
