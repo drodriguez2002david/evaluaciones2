@@ -7,8 +7,9 @@
             <img src="ICONO-AIDIN-512.png" alt="Logo" class="img-fluid mb-3" style="max-width: 75px;">
             <h1 style="font-family: 'Amaranth', sans-serif; font-weight: bold; color: #3b56a1;">Evaluaciones</h1>
           </div>
-          <div class="table-responsive">
-            <table class="table table-bordered">
+          <div class="d-flex align-items-start">
+            <div class="table-responsive">
+              <table class="table table-bordered">
               <thead>
                 <tr>
                   <th class="fixed-column" rowspan="2">ALUMNOS</th>
@@ -46,6 +47,30 @@
                 </tr>
               </tbody>
             </table>
+            </div>
+            <div class="legend-container ms-4">
+              <h4 class="mb-3">ACTIVIDADES</h4>
+              <div class="legend-item">
+                <span class="status-circle bg-secondary"></span>
+                <span class="ms-2">No activada</span>
+              </div>
+              <div class="legend-item">
+                <span class="status-circle bg-danger"></span>
+                <span class="ms-2">No entregada por el alumno</span>
+              </div>
+              <div class="legend-item">
+                <span class="status-circle bg-info"></span>
+                <span class="ms-2">Entregada pero no evaluada por Aidin</span>
+              </div>
+              <div class="legend-item">
+                <span class="status-circle bg-primary"></span>
+                <span class="ms-2">Evaluada por AIDIN</span>
+              </div>
+              <div class="legend-item">
+                <span class="status-circle bg-success"></span>
+                <span class="ms-2">Evaluada por el profesor</span>
+              </div>
+            </div>
           </div>
 
           <!-- Modal -->
@@ -212,5 +237,23 @@ export default {
 
 .activity-cell:active {
   background-color: rgba(0, 77, 152, 0.2);
+}
+
+.legend-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.legend-item .status-circle {
+  width: 15px;
+  height: 15px;
 }
 </style>
