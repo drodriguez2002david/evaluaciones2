@@ -113,8 +113,8 @@
                       style="cursor: pointer;"
                       class="activity-cell"
                       :data-cell-type="getCellType(index)"
-                      :data-bs-toggle="getCellType(index) === 'explica' && index === 3 ? 'tooltip' : null"
-                      :title="getCellType(index) === 'explica' && index === 3 ? '¿Por qué los mares no se desbordan?' : null">
+                      :data-bs-toggle="activity === 'Explica el alumno 1' ? 'tooltip' : null"
+                      :title="activity === 'Explica el alumno 1' ? '¿Por qué los mares no se desbordan?' : null">
                     {{ activity.grade || '-' }}
                     <span :class="['status-circle', getStatusClass(activity.status)]"></span>
                   </td>
