@@ -234,9 +234,13 @@ export default {
 
 /* Color de fondo para la columna TEMA */
 .table thead tr:first-child th:nth-child(2),
-.table thead tr:last-child th:first-child,
+.table thead tr:last-child th:first-child {
+  background-color: #009742;
+  color: white;
+}
 .table tbody td:nth-child(2) {
-  background-color: #eafaf1;
+  background-color: #009742;
+  color: white;
 }
 
 .table tbody tr:hover td {
