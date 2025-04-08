@@ -288,6 +288,14 @@ export default {
   background-color: #edffeb;
 }
 
+.table tbody td:nth-child(8),
+.table tbody td:nth-child(9),
+.table tbody td:nth-child(10),
+.table tbody td:nth-child(11),
+.table tbody td:nth-child(12) {
+  background-color: #ffffec;
+}
+
 .table tbody tr:hover td {
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
