@@ -13,24 +13,24 @@
               <thead>
                 <tr>
                   <th class="fixed-column" rowspan="2">ALUMNOS</th>
-                  <th data-column-type="tema">TEMA</th>
-                  <th colspan="2" data-column-type="enigma">ENIGMA</th>
-                  <th data-column-type="esquema">ESQUEMA</th>
-                  <th colspan="2" data-column-type="explica">EXPLICA EL ALUMNO</th>
-                  <th colspan="5" data-column-type="coding">CODING</th>
+                  <th>TEMA</th>
+                  <th colspan="2">ENIGMA</th>
+                  <th>ESQUEMA</th>
+                  <th colspan="2">EXPLICA EL ALUMNO</th>
+                  <th colspan="5">CODING</th>
                 </tr>
                 <tr>
-                  <th data-column-type="tema">EL CICLO DEL AGUA</th>
-                  <th data-column-type="enigma">Enigma 1</th>
-                  <th data-column-type="enigma">Enigma 2</th>
-                  <th data-column-type="esquema">Esquema 1</th>
-                  <th data-column-type="explica">Explica 1</th>
-                  <th data-column-type="explica">Explica 2</th>
-                  <th data-column-type="coding">Coding 1</th>
-                  <th data-column-type="coding">Coding 2</th>
-                  <th data-column-type="coding">Coding 3</th>
-                  <th data-column-type="coding">Coding 4</th>
-                  <th data-column-type="coding">Coding 5</th>
+                  <th>EL CICLO DEL AGUA</th>
+                  <th>Enigma 1</th>
+                  <th>Enigma 2</th>
+                  <th>Esquema 1</th>
+                  <th>Explica 1</th>
+                  <th>Explica 2</th>
+                  <th>Coding 1</th>
+                  <th>Coding 2</th>
+                  <th>Coding 3</th>
+                  <th>Coding 4</th>
+                  <th>Coding 5</th>
                 </tr>
               </thead>
               <tbody>
@@ -232,56 +232,68 @@ export default {
   white-space: nowrap;
 }
 
-/* Colores por tipo de columna */
-/* TEMA */
-[data-column-type="tema"] {
-  background-color: #0799fe !important;
-  color: white !important;
+/* Color de fondo para la columna TEMA */
+.table thead tr:first-child th:nth-child(2),
+.table thead tr:last-child th:first-child {
+  background-color: #0799fe;
+  color: white;
+}
+.table tbody td:nth-child(2) {
+  background-color: #0799fe;
+  color: white;
+}
+.table thead tr:first-child th:nth-child(3),
+.table thead tr:last-child th:nth-child(2),
+.table thead tr:last-child th:nth-child(3) {
+  background-color: #ffa641;
+  color: white;
 }
 
-/* ENIGMA */
-[data-column-type="enigma"] {
-  background-color: #ffa641 !important;
-  color: white !important;
+.table thead tr:first-child th:nth-child(4),
+.table thead tr:last-child th:nth-child(4) {
+  background-color: #63038d;
+  color: white;
 }
 
-/* ESQUEMA */
-[data-column-type="esquema"] {
-  background-color: #63038d !important;
-  color: white !important;
+.table thead tr:first-child th:nth-child(5),
+.table thead tr:last-child th:nth-child(5),
+.table thead tr:last-child th:nth-child(6) {
+  background-color: #009742;
+  color: white;
 }
 
-/* EXPLICA */
-[data-column-type="explica"] {
-  background-color: #009742 !important;
-  color: white !important;
+.table thead tr:first-child th:nth-child(6),
+.table thead tr:first-child th:nth-child(8),
+.table thead tr:last-child th:nth-child(7),
+.table thead tr:last-child th:nth-child(8),
+.table thead tr:last-child th:nth-child(9),
+.table thead tr:last-child th:nth-child(10),
+.table thead tr:last-child th:nth-child(11) {
+  background-color: #cbc200;
+  color: white;
 }
 
-/* CODING */
-[data-column-type="coding"] {
-  background-color: #cbc200 !important;
-  color: white !important;
+/* Color de fondo para las celdas de Acertijo */
+.table tbody td:nth-child(3),
+.table tbody td:nth-child(4) {
+  background-color: #ffeccc;
 }
 
-/* Colores de fondo para las celdas del body */
-/* ENIGMA cells */
-[data-cell-type="enigma"] {
-  background-color: #ffeccc !important;
+.table tbody td:nth-child(5) {
+  background-color: #f9eeff;
 }
 
-/* ESQUEMA cells */
-[data-cell-type="esquema"] {
-  background-color: #f9eeff !important;
+.table tbody td:nth-child(6),
+.table tbody td:nth-child(7) {
+  background-color: #edffeb;
 }
 
-/* EXPLICA cells */
-[data-cell-type="explica"] {
-  background-color: #edffeb !important;
-}
-
-/* CODING cells */
-[data-cell-type="coding"] {
-  background-color: #ffffec !important;
+.table tbody td:nth-child(8),
+.table tbody td:nth-child(9),
+.table tbody td:nth-child(10),
+.table tbody td:nth-child(11),
+.table tbody td:nth-child(12) {
+  background-color: #ffffec;
 }
 
 .table tbody tr:hover td {
