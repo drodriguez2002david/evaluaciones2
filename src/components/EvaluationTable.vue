@@ -184,7 +184,7 @@
                        selectedActivity && selectedActivity.type === 'enigma' && selectedActivity.enigmaNumber === 2 ? 'ENIGMA 2: Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?' :
                        selectedActivity && selectedActivity.type === 'esquema' ? 'ESQUEMA 1: El viaje de una gota de agua' :
                        selectedActivity && selectedActivity.type === 'explica' && (selectedActivity.index === 3 || (selectedActivity.index >= 7 && selectedActivity.index <= 11)) ? 'Explica el alumno 1: ¿Por qué los mares no se desbordan?' :
-                       selectedActivity && selectedActivity.type === 'explica' && selectedActivity.index === 4 ? 'Explica el alumno 2: ¿Por qué el mar es salado?' : 'Evaluación' }}
+                       selectedActivity && selectedActivity.type === 'explica' && (selectedActivity.index === 4 || (selectedActivity.index >= 12 && selectedActivity.index <= 16)) ? 'Explica el alumno 2: ¿Por qué el mar es salado?' : 'Evaluación' }}
                   </h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
