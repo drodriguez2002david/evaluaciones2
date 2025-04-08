@@ -36,11 +36,12 @@
               <tbody>
                 <tr v-for="student in students" :key="student.id">
                   <td class="fixed-column">{{ student.name }}</td>
-                  <td></td>
+                  <td data-cell-type="tema"></td>
                   <td v-for="(activity, index) in student.activities" :key="index" 
                       @click="openModal(student, activity)"
                       style="cursor: pointer;"
-                      class="activity-cell">
+                      class="activity-cell"
+                      :data-cell-type="getCellType(index)">
                     {{ activity.grade || '-' }}
                     <span :class="['status-circle', getStatusClass(activity.status)]"></span>
                   </td>
@@ -165,6 +166,13 @@ export default {
       modalElement._bsModal.show()
     }
 
+    const getCellType = (index) => {
+      if (index < 2) return 'enigma'
+      if (index === 2) return 'esquema'
+      if (index === 3 || index === 4) return 'explica'
+      return 'coding'
+    }
+
     onMounted(() => {
       import('bootstrap/dist/js/bootstrap.bundle.min.js')
     })
@@ -173,7 +181,8 @@ export default {
       students,
       selectedActivity,
       getStatusClass,
-      openModal
+      openModal,
+      getCellType
     }
   }
 }
@@ -232,68 +241,52 @@ export default {
   white-space: nowrap;
 }
 
-/* Color de fondo para la columna TEMA */
-.table thead tr:first-child th:nth-child(2),
-.table thead tr:last-child th:first-child {
-  background-color: #0799fe;
-  color: white;
-}
-.table tbody td:nth-child(2) {
-  background-color: #0799fe;
-  color: white;
-}
-.table thead tr:first-child th:nth-child(3),
-.table thead tr:last-child th:nth-child(2),
-.table thead tr:last-child th:nth-child(3) {
-  background-color: #ffa641;
-  color: white;
+/* Colores para encabezados por tipo */
+[data-column-type="tema"] {
+  background-color: #0799fe !important;
+  color: white !important;
 }
 
-.table thead tr:first-child th:nth-child(4),
-.table thead tr:last-child th:nth-child(4) {
-  background-color: #63038d;
-  color: white;
+[data-column-type="enigma"] {
+  background-color: #ffa641 !important;
+  color: white !important;
 }
 
-.table thead tr:first-child th:nth-child(5),
-.table thead tr:last-child th:nth-child(5),
-.table thead tr:last-child th:nth-child(6) {
-  background-color: #009742;
-  color: white;
+[data-column-type="esquema"] {
+  background-color: #63038d !important;
+  color: white !important;
 }
 
-.table thead tr:first-child th:nth-child(6),
-.table thead tr:first-child th:nth-child(8),
-.table thead tr:last-child th:nth-child(7),
-.table thead tr:last-child th:nth-child(8),
-.table thead tr:last-child th:nth-child(9),
-.table thead tr:last-child th:nth-child(10),
-.table thead tr:last-child th:nth-child(11) {
-  background-color: #cbc200;
-  color: white;
+[data-column-type="explica"] {
+  background-color: #009742 !important;
+  color: white !important;
 }
 
-/* Color de fondo para las celdas de Acertijo */
-.table tbody td:nth-child(3),
-.table tbody td:nth-child(4) {
-  background-color: #ffeccc;
+[data-column-type="coding"] {
+  background-color: #cbc200 !important;
+  color: white !important;
 }
 
-.table tbody td:nth-child(5) {
-  background-color: #f9eeff;
+/* Colores para celdas del cuerpo por tipo */
+[data-cell-type="tema"] {
+  background-color: #0799fe !important;
+  color: white !important;
 }
 
-.table tbody td:nth-child(6),
-.table tbody td:nth-child(7) {
-  background-color: #edffeb;
+[data-cell-type="enigma"] {
+  background-color: #ffeccc !important;
 }
 
-.table tbody td:nth-child(8),
-.table tbody td:nth-child(9),
-.table tbody td:nth-child(10),
-.table tbody td:nth-child(11),
-.table tbody td:nth-child(12) {
-  background-color: #ffffec;
+[data-cell-type="esquema"] {
+  background-color: #f9eeff !important;
+}
+
+[data-cell-type="explica"] {
+  background-color: #edffeb !important;
+}
+
+[data-cell-type="coding"] {
+  background-color: #ffffec !important;
 }
 
 .table tbody tr:hover td {
