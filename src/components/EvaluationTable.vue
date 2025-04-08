@@ -251,7 +251,7 @@ export default {
 
 .table thead tr:first-child th:nth-child(4),
 .table thead tr:last-child th:nth-child(4) {
-  background-color: #c541ff;
+  background-color: #63038d;
   color: white;
 }
 
