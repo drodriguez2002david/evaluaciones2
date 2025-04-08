@@ -62,7 +62,12 @@
                     EL CICLO DEL AGUA 2
                     <span class="toggle-icon">{{ isExpanded2 ? '▼' : '▶' }}</span>
                   </th>
-                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded2 }">Enigma 1</th>
+                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded2 }"
+                      data-bs-toggle="tooltip" 
+                      data-bs-placement="top" 
+                      title="¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?">
+                      Enigma 1
+                  </th>
                   <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded2 }">Enigma 2</th>
                   <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded2 }">Esquema 1</th>
                   <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">Explica 1</th>
