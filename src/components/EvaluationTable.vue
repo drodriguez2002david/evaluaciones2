@@ -13,9 +13,8 @@
               <thead>
                 <tr>
                   <th class="fixed-column" rowspan="2">ALUMNOS</th>
-                  <th data-column-type="tema" @click="isExpanded = !isExpanded" style="cursor: pointer;">
+                  <th data-column-type="tema">
                     TEMA
-                    <span class="toggle-icon">{{ isExpanded ? '▼' : '▶' }}</span>
                   </th>
                   <th colspan="2" data-column-type="enigma" :class="{ 'collapsed': !isExpanded }">ENIGMA</th>
                   <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded }">ESQUEMA</th>
