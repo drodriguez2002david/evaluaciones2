@@ -273,6 +273,12 @@ export default {
   color: white;
 }
 
+/* Color de fondo para las celdas de Acertijo */
+.table tbody td:nth-child(3),
+.table tbody td:nth-child(4) {
+  background-color: #ffeccc;
+}
+
 .table tbody tr:hover td {
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
