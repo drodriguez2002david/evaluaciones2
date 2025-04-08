@@ -163,9 +163,8 @@
                     {{ selectedActivity && selectedActivity.enigmaNumber === 1 ? 'ENIGMA 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' :
                        selectedActivity && selectedActivity.enigmaNumber === 2 ? 'ENIGMA 2: Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?' :
                        selectedActivity && selectedActivity.type === 'esquema' ? 'ESQUEMA 1: El viaje de una gota de agua' :
-                       selectedActivity && selectedActivity.index === 3 ? 'Explica el alumno 1: ¿Por qué los mares no se desbordan?' :
-                       selectedActivity && selectedActivity.index === 13 ? 'Explica el alumno 1: ¿Por qué los mares no se desbordan?' :
-                       selectedActivity && selectedActivity.index === 4 ? 'Explica el alumno 2: ¿Por qué el mar es salado?' : 'Evaluación' }}
+                       selectedActivity && selectedActivity.type === 'explica' && [3, 13, 23, 33, 43, 53, 63, 73, 83, 93].includes(selectedActivity.index) ? 'Explica el alumno 1: ¿Por qué los mares no se desbordan?' :
+                       selectedActivity && selectedActivity.type === 'explica' && selectedActivity.index === 4 ? 'Explica el alumno 2: ¿Por qué el mar es salado?' : 'Evaluación' }}
                   </h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
