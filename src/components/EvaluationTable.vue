@@ -36,11 +36,12 @@
               <tbody>
                 <tr v-for="student in students" :key="student.id">
                   <td class="fixed-column">{{ student.name }}</td>
-                  <td></td>
+                  <td data-cell-type="tema"></td>
                   <td v-for="(activity, index) in student.activities" :key="index" 
                       @click="openModal(student, activity)"
                       style="cursor: pointer;"
-                      class="activity-cell">
+                      class="activity-cell"
+                      :data-cell-type="getCellType(index)">
                     {{ activity.grade || '-' }}
                     <span :class="['status-circle', getStatusClass(activity.status)]"></span>
                   </td>
@@ -163,6 +164,13 @@ export default {
         modalElement._bsModal = new bootstrap.Modal(modalElement)
       }
       modalElement._bsModal.show()
+    }
+
+    const getCellType = (index) => {
+      if (index < 2) return 'enigma'
+      if (index === 2) return 'esquema'
+      if (index === 3 || index === 4) return 'explica'
+      return 'coding'
     }
 
     onMounted(() => {
