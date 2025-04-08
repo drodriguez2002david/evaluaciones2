@@ -180,11 +180,11 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title">
-                    {{ selectedActivity && selectedActivity.enigmaNumber === 1 ? 'ENIGMA 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' :
-                       selectedActivity && selectedActivity.enigmaNumber === 2 ? 'ENIGMA 2: Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?' :
+                    {{ selectedActivity && selectedActivity.type === 'enigma' && selectedActivity.enigmaNumber === 1 ? 'ENIGMA 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' :
+                       selectedActivity && selectedActivity.type === 'enigma' && selectedActivity.enigmaNumber === 2 ? 'ENIGMA 2: Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?' :
                        selectedActivity && selectedActivity.type === 'esquema' ? 'ESQUEMA 1: El viaje de una gota de agua' :
-                       selectedActivity && selectedActivity.type === 'explica1' ? 'Escribe el alumno 1: ¿Por qué los mares no se desbordan?' :
-                       selectedActivity && selectedActivity.type === 'explica2' ? 'Escribe el alumno 2: ¿Por qué el mar es salado?' : 'Evaluación' }}
+                       selectedActivity && selectedActivity.type === 'explica' && selectedActivity.index === 3 ? 'Escribe el alumno 1: ¿Por qué los mares no se desbordan?' :
+                       selectedActivity && selectedActivity.type === 'explica' && selectedActivity.index === 4 ? 'Escribe el alumno 2: ¿Por qué el mar es salado?' : 'Evaluación' }}
                   </h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
@@ -269,7 +269,7 @@ export default {
 
     const openModal = (student, activity, index) => {
       const type = getCellType(index - 1);
-      selectedActivity.value = {...activity, studentName: student.name, enigmaNumber: index, type}
+      selectedActivity.value = {...activity, studentName: student.name, enigmaNumber: index, type, index}
       const modalElement = document.getElementById('evaluationModal')
       if (!modalElement._bsModal) {
         modalElement._bsModal = new bootstrap.Modal(modalElement)
