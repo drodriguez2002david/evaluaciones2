@@ -262,6 +262,7 @@ export default {
   color: white;
 }
 
+.table thead tr:first-child th:nth-child(6),
 .table thead tr:first-child th:nth-child(8),
 .table thead tr:last-child th:nth-child(7),
 .table thead tr:last-child th:nth-child(8),
