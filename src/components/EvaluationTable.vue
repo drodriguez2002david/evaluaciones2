@@ -16,33 +16,64 @@
                   <th data-column-type="tema">
                     TEMA
                   </th>
-                  <th colspan="2" data-column-type="enigma" :class="{ 'collapsed': !isExpanded }">ENIGMA</th>
-                  <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded }">ESQUEMA</th>
-                  <th colspan="2" data-column-type="explica" :class="{ 'collapsed': !isExpanded }">EXPLICA EL ALUMNO</th>
-                  <th colspan="5" data-column-type="coding" :class="{ 'collapsed': !isExpanded }">CODING</th>
+                  <th colspan="2" data-column-type="enigma" :class="{ 'collapsed': !isExpanded1 }">ENIGMA</th>
+                  <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded1 }">ESQUEMA</th>
+                  <th colspan="2" data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">EXPLICA EL ALUMNO</th>
+                  <th colspan="5" data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">CODING</th>
+                  <th data-column-type="tema">
+                    TEMA
+                  </th>
+                  <th colspan="2" data-column-type="enigma" :class="{ 'collapsed': !isExpanded2 }">ENIGMA</th>
+                  <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded2 }">ESQUEMA</th>
+                  <th colspan="2" data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">EXPLICA EL ALUMNO</th>
+                  <th colspan="5" data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">CODING</th>
+
                 </tr>
                 <tr>
-                  <th data-column-type="tema" @click="isExpanded = !isExpanded" style="cursor: pointer;">
+                  <th data-column-type="tema" @click="isExpanded1 = !isExpanded1" style="cursor: pointer;">
                     EL CICLO DEL AGUA
-                    <span class="toggle-icon">{{ isExpanded ? '▼' : '▶' }}</span>
+                    <span class="toggle-icon">{{ isExpanded1 ? '▼' : '▶' }}</span>
                   </th>
-                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded }">Enigma 1</th>
-                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded }">Enigma 2</th>
-                  <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded }">Esquema 1</th>
-                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded }">Explica 1</th>
-                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded }">Explica 2</th>
-                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded }">Coding 1</th>
-                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded }">Coding 2</th>
-                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded }">Coding 3</th>
-                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded }">Coding 4</th>
-                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded }">Coding 5</th>
+                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded1 }">Enigma 1</th>
+                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded1 }">Enigma 2</th>
+                  <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded1 }">Esquema 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">Explica 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">Explica 2</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 1</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 2</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 3</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 4</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 5</th>
+                  <th data-column-type="tema" @click="isExpanded2 = !isExpanded2" style="cursor: pointer;">
+                    EL CICLO DEL AGUA 2
+                    <span class="toggle-icon">{{ isExpanded2 ? '▼' : '▶' }}</span>
+                  </th>
+                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded2 }">Enigma 1</th>
+                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded2 }">Enigma 2</th>
+                  <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded2 }">Esquema 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">Explica 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">Explica 2</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 1</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 2</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 3</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 4</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 5</th>
                 </tr>
               </thead>
               <tbody>
                 <tr v-for="student in students" :key="student.id">
                   <td class="fixed-column">{{ student.name }}</td>
                   <td data-cell-type="tema"></td>
-                  <td v-for="(activity, index) in student.activities" :key="index" 
+                  <td v-for="(activity, index) in student.activities" :key="index"
+                      @click="openModal(student, activity)"
+                      style="cursor: pointer;"
+                      class="activity-cell"
+                      :data-cell-type="getCellType(index)">
+                    {{ activity.grade || '-' }}
+                    <span :class="['status-circle', getStatusClass(activity.status)]"></span>
+                  </td>
+                  <td data-cell-type="tema"></td>
+                  <td v-for="(activity, index) in student.activities2" :key="index"
                       @click="openModal(student, activity)"
                       style="cursor: pointer;"
                       class="activity-cell"
@@ -126,28 +157,29 @@ import * as bootstrap from 'bootstrap'
 export default {
   name: 'EvaluationTable',
   setup() {
-    const isExpanded = ref(false)
+    const isExpanded1 = ref(false)
+    const isExpanded2 = ref(false)
     const students = ref([
-      { id: 1, name: 'Patricia Álvarez', activities: Array(10).fill({ status: 'pending', chatUrl: '' }) },
-      { id: 2, name: 'Fernando Castro', activities: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
-      { id: 3, name: 'Andrés Delgado', activities: Array(10).fill({ status: 'aiEvaluated', grade: 8, chatUrl: '' }) },
-      { id: 4, name: 'Carmen Díaz', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
-      { id: 5, name: 'David Fernández', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
-      { id: 6, name: 'Ana García', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
-      { id: 7, name: 'Pablo Gómez', activities: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
-      { id: 8, name: 'Isabel Jiménez', activities: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
-      { id: 9, name: 'María López', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
-      { id: 10, name: 'Juan Martínez', activities: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
-      { id: 11, name: 'José Moreno', activities: Array(10).fill({ status: 'pending', chatUrl: '' }) },
-      { id: 12, name: 'Roberto Muñoz', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
-      { id: 13, name: 'Lucía Navarro', activities: Array(10).fill({ status: 'aiEvaluated', grade: 9, chatUrl: '' }) },
-      { id: 14, name: 'Cristina Ortiz', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
-      { id: 15, name: 'Sofia Pérez', activities: Array(10).fill({ status: 'pending', chatUrl: '' }) },
-      { id: 16, name: 'Alberto Romero', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
-      { id: 17, name: 'Carlos Rodríguez', activities: Array(10).fill({ status: 'pending', chatUrl: '' }) },
-      { id: 18, name: 'Miguel Ruiz', activities: Array(10).fill({ status: 'aiEvaluated', grade: 7, chatUrl: '' }) },
-      { id: 19, name: 'Laura Sánchez', activities: Array(10).fill({ status: 'aiEvaluated', grade: 8, chatUrl: '' }) },
-      { id: 20, name: 'Elena Torres', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }) }
+      { id: 1, name: 'Patricia Álvarez', activities: Array(10).fill({ status: 'pending', chatUrl: '' }), activities2: Array(10).fill({ status: 'pending', chatUrl: '' }) },
+      { id: 2, name: 'Fernando Castro', activities: Array(10).fill({ status: 'submitted', chatUrl: '' }), activities2: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
+      { id: 3, name: 'Andrés Delgado', activities: Array(10).fill({ status: 'aiEvaluated', grade: 8, chatUrl: '' }), activities2: Array(10).fill({ status: 'aiEvaluated', grade: 8, chatUrl: '' }) },
+      { id: 4, name: 'Carmen Díaz', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }), activities2: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
+      { id: 5, name: 'David Fernández', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }), activities2: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
+      { id: 6, name: 'Ana García', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }), activities2: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
+      { id: 7, name: 'Pablo Gómez', activities: Array(10).fill({ status: 'submitted', chatUrl: '' }), activities2: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
+      { id: 8, name: 'Isabel Jiménez', activities: Array(10).fill({ status: 'submitted', chatUrl: '' }), activities2: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
+      { id: 9, name: 'María López', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }), activities2: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
+      { id: 10, name: 'Juan Martínez', activities: Array(10).fill({ status: 'submitted', chatUrl: '' }), activities2: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
+      { id: 11, name: 'José Moreno', activities: Array(10).fill({ status: 'pending', chatUrl: '' }), activities2: Array(10).fill({ status: 'pending', chatUrl: '' }) },
+      { id: 12, name: 'Roberto Muñoz', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }), activities2: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
+      { id: 13, name: 'Lucía Navarro', activities: Array(10).fill({ status: 'aiEvaluated', grade: 9, chatUrl: '' }), activities2: Array(10).fill({ status: 'aiEvaluated', grade: 9, chatUrl: '' }) },
+      { id: 14, name: 'Cristina Ortiz', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }), activities2: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
+      { id: 15, name: 'Sofia Pérez', activities: Array(10).fill({ status: 'pending', chatUrl: '' }), activities2: Array(10).fill({ status: 'pending', chatUrl: '' }) },
+      { id: 16, name: 'Alberto Romero', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }), activities2: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
+      { id: 17, name: 'Carlos Rodríguez', activities: Array(10).fill({ status: 'pending', chatUrl: '' }), activities2: Array(10).fill({ status: 'pending', chatUrl: '' }) },
+      { id: 18, name: 'Miguel Ruiz', activities: Array(10).fill({ status: 'aiEvaluated', grade: 7, chatUrl: '' }), activities2: Array(10).fill({ status: 'aiEvaluated', grade: 7, chatUrl: '' }) },
+      { id: 19, name: 'Laura Sánchez', activities: Array(10).fill({ status: 'aiEvaluated', grade: 8, chatUrl: '' }), activities2: Array(10).fill({ status: 'aiEvaluated', grade: 8, chatUrl: '' }) },
+      { id: 20, name: 'Elena Torres', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }), activities2: Array(10).fill({ status: 'notStarted', chatUrl: '' }) }
     ])
 
     const selectedActivity = ref(null)
@@ -189,7 +221,8 @@ export default {
       getStatusClass,
       openModal,
       getCellType,
-      isExpanded
+      isExpanded1,
+      isExpanded2
     }
   }
 }
@@ -206,7 +239,7 @@ export default {
 }
 
 [data-cell-type]:not([data-cell-type="tema"]) {
-  display: v-bind(isExpanded ? 'table-cell' : 'none');
+  display: v-bind(isExpanded1 ? 'table-cell' : 'none');
 }
 .fixed-column {
   position: sticky;
