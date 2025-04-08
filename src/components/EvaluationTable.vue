@@ -64,10 +64,10 @@
                   <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }" data-bs-toggle="tooltip" title="¿Por qué los mares no se desbordan?">Explica 1</th>
                   <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }" data-bs-toggle="tooltip" data-bs-placement="top" title="¿Por qué el mar es salado?">Explica 2</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }" data-bs-toggle="tooltip" data-bs-placement="top" title="CONDENSACIÓN">Coding 1</th>
-                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 2</th>
-                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 3</th>
-                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 4</th>
-                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 5</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }" data-bs-toggle="tooltip" data-bs-placement="top" title="NUBES">Coding 2</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }" data-bs-toggle="tooltip" data-bs-placement="top" title="PRECIPITACIÓN">Coding 3</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }" data-bs-toggle="tooltip" data-bs-placement="top" title="ESCORRENTÍA">Coding 4</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }" data-bs-toggle="tooltip" data-bs-placement="top" title="EVAPORACIÓN">Coding 5</th>
                   <th data-column-type="tema" @click="isExpanded2 = !isExpanded2" style="cursor: pointer;">
                     EL CICLO DEL AGUA 2
                     <span class="toggle-icon">{{ isExpanded2 ? '▼' : '▶' }}</span>
@@ -93,10 +93,10 @@
                   <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }" data-bs-toggle="tooltip" data-bs-placement="top" title="¿Por qué los mares no se desbordan?">Explica 1</th>
                   <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }" data-bs-toggle="tooltip" data-bs-placement="top" title="¿Por qué el mar es salado?">Explica 2</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }" data-bs-toggle="tooltip" data-bs-placement="top" title="CONDENSACIÓN">Coding 1</th>
-                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 2</th>
-                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 3</th>
-                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 4</th>
-                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 5</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }" data-bs-toggle="tooltip" data-bs-placement="top" title="NUBES">Coding 2</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }" data-bs-toggle="tooltip" data-bs-placement="top" title="PRECIPITACIÓN">Coding 3</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }" data-bs-toggle="tooltip" data-bs-placement="top" title="ESCORRENTÍA">Coding 4</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }" data-bs-toggle="tooltip" data-bs-placement="top" title="EVAPORACIÓN">Coding 5</th>
                 </tr>
               </thead>
               <tbody>
