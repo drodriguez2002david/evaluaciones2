@@ -13,24 +13,24 @@
               <thead>
                 <tr>
                   <th class="fixed-column" rowspan="2">ALUMNOS</th>
-                  <th>TEMA</th>
-                  <th colspan="2">ENIGMA</th>
-                  <th>ESQUEMA</th>
-                  <th colspan="2">EXPLICA EL ALUMNO</th>
-                  <th colspan="5">CODING</th>
+                  <th data-column-type="tema">TEMA</th>
+                  <th colspan="2" data-column-type="enigma">ENIGMA</th>
+                  <th data-column-type="esquema">ESQUEMA</th>
+                  <th colspan="2" data-column-type="explica">EXPLICA EL ALUMNO</th>
+                  <th colspan="5" data-column-type="coding">CODING</th>
                 </tr>
                 <tr>
-                  <th>EL CICLO DEL AGUA</th>
-                  <th>Enigma 1</th>
-                  <th>Enigma 2</th>
-                  <th>Esquema 1</th>
-                  <th>Explica 1</th>
-                  <th>Explica 2</th>
-                  <th>Coding 1</th>
-                  <th>Coding 2</th>
-                  <th>Coding 3</th>
-                  <th>Coding 4</th>
-                  <th>Coding 5</th>
+                  <th data-column-type="tema">EL CICLO DEL AGUA</th>
+                  <th data-column-type="enigma">Enigma 1</th>
+                  <th data-column-type="enigma">Enigma 2</th>
+                  <th data-column-type="esquema">Esquema 1</th>
+                  <th data-column-type="explica">Explica 1</th>
+                  <th data-column-type="explica">Explica 2</th>
+                  <th data-column-type="coding">Coding 1</th>
+                  <th data-column-type="coding">Coding 2</th>
+                  <th data-column-type="coding">Coding 3</th>
+                  <th data-column-type="coding">Coding 4</th>
+                  <th data-column-type="coding">Coding 5</th>
                 </tr>
               </thead>
               <tbody>
