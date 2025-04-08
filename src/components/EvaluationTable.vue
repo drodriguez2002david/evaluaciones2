@@ -36,7 +36,10 @@
                 <tr v-for="student in students" :key="student.id">
                   <td class="fixed-column">{{ student.name }}</td>
                   <td></td>
-                  <td v-for="(activity, index) in student.activities" :key="index" @click="openModal(student, activity)">
+                  <td v-for="(activity, index) in student.activities" :key="index" 
+                      @click="openModal(student, activity)"
+                      style="cursor: pointer;"
+                      class="activity-cell">
                     {{ activity.grade || '-' }}
                     <span :class="['status-circle', getStatusClass(activity.status)]"></span>
                   </td>
@@ -131,9 +134,15 @@ export default {
     const openModal = (student, activity) => {
       selectedActivity.value = {...activity, studentName: student.name}
       const modalElement = document.getElementById('evaluationModal')
-      const modal = new bootstrap.Modal(modalElement)
-      modal.show()
+      if (!modalElement._bsModal) {
+        modalElement._bsModal = new bootstrap.Modal(modalElement)
+      }
+      modalElement._bsModal.show()
     }
+
+    onMounted(() => {
+      import('bootstrap/dist/js/bootstrap.bundle.min.js')
+    })
 
     return {
       students,
@@ -195,5 +204,13 @@ export default {
 
 .table tbody tr:hover {
   background-color: rgba(0, 77, 152, 0.15);
+}
+
+.activity-cell:hover {
+  background-color: rgba(0, 77, 152, 0.1);
+}
+
+.activity-cell:active {
+  background-color: rgba(0, 77, 152, 0.2);
 }
 </style>
