@@ -233,6 +233,9 @@ export default {
 
     const toggleStudentFilter = (student) => {
       selectedStudent.value = selectedStudent.value === student.id ? null : student.id;
+      if (selectedStudent.value) {
+        searchQuery.value = '';
+      }
     }
 
     const handleSearch = () => {
