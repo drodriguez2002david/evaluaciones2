@@ -235,11 +235,11 @@ export default {
 /* Color de fondo para la columna TEMA */
 .table thead tr:first-child th:nth-child(2),
 .table thead tr:last-child th:first-child {
-  background-color: #009742;
+  background-color: #0799fe;
   color: white;
 }
 .table tbody td:nth-child(2) {
-  background-color: #009742;
+  background-color: #0799fe;
   color: white;
 }
 .table thead tr:first-child th:nth-child(3),
