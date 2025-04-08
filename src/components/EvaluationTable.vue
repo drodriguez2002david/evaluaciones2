@@ -279,6 +279,10 @@ export default {
   background-color: #ffeccc;
 }
 
+.table tbody td:nth-child(5) {
+  background-color: #f9eeff;
+}
+
 .table tbody tr:hover td {
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
