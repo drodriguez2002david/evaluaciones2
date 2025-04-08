@@ -274,7 +274,7 @@ export default {
 }
 
 .table tbody tr:hover td {
-  background-color: rgba(0, 77, 152, 0.15) !important;
+  background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 .table tbody tr:hover td.fixed-column {
