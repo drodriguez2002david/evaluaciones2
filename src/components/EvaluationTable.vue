@@ -61,8 +61,13 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="student in students" :key="student.id">
-                  <td class="fixed-column">{{ student.name }}</td>
+                <tr v-for="student in filteredStudents" :key="student.id">
+                  <td class="fixed-column" 
+                      @click="toggleStudentFilter(student)" 
+                      :class="{ 'selected-student': selectedStudent === student.id }"
+                      style="cursor: pointer;">
+                    {{ student.name }}
+                  </td>
                   <td data-cell-type="tema"></td>
                   <td v-for="(activity, index) in student.activities" :key="index"
                       @click="openModal(student, activity)"
@@ -159,6 +164,7 @@ export default {
   setup() {
     const isExpanded1 = ref(false)
     const isExpanded2 = ref(false)
+    const selectedStudent = ref(null)
     const students = ref([
       { id: 1, name: 'Patricia Álvarez', activities: Array(10).fill({ status: 'pending', chatUrl: '' }), activities2: Array(10).fill({ status: 'pending', chatUrl: '' }) },
       { id: 2, name: 'Fernando Castro', activities: Array(10).fill({ status: 'submitted', chatUrl: '' }), activities2: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
@@ -215,6 +221,15 @@ export default {
       import('bootstrap/dist/js/bootstrap.bundle.min.js')
     })
 
+    const toggleStudentFilter = (student) => {
+      selectedStudent.value = selectedStudent.value === student.id ? null : student.id;
+    }
+
+    const filteredStudents = computed(() => {
+      if (!selectedStudent.value) return students.value;
+      return students.value.filter(student => student.id === selectedStudent.value);
+    });
+
     return {
       students,
       selectedActivity,
@@ -222,7 +237,10 @@ export default {
       openModal,
       getCellType,
       isExpanded1,
-      isExpanded2
+      isExpanded2,
+      filteredStudents,
+      selectedStudent,
+      toggleStudentFilter
     }
   }
 }
@@ -389,5 +407,14 @@ export default {
 .table thead .fixed-column {
   background-color: #3b56a1;
   color: white;
+}
+
+.selected-student {
+  background-color: #e3f2fd !important;
+  font-weight: bold;
+}
+
+.fixed-column:hover {
+  background-color: #f5f5f5;
 }
 </style>
