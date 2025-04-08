@@ -254,7 +254,7 @@ export default {
 
     const openModal = (student, activity, index) => {
       const type = getCellType(index - 1);
-      const explicaNumber = type === 'explica' ? Math.floor((index - 2) / 2) + 1 : null;
+      const explicaNumber = type === 'explica' ? (index === 4 || index === 16 ? 1 : 2) : null;
       selectedActivity.value = {...activity, studentName: student.name, enigmaNumber: index, type, explicaNumber}
       const modalElement = document.getElementById('evaluationModal')
       if (!modalElement._bsModal) {
