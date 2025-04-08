@@ -160,11 +160,16 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title">
-                    {{ selectedActivity && selectedActivity.enigmaNumber === 1 ? 'ENIGMA 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' :
-                       selectedActivity && selectedActivity.enigmaNumber === 2 ? 'ENIGMA 2: Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?' :
-                       selectedActivity && selectedActivity.type === 'esquema' ? 'ESQUEMA 1: El viaje de una gota de agua' :
-                       selectedActivity && selectedActivity.explicaNumber === 1 ? 'EXPLICA 1: ¿Por qué los mares no se desbordan?' :
-                       selectedActivity && selectedActivity.explicaNumber === 2 ? 'EXPLICA 2: ¿Por qué el mar es salado?' : 'Evaluación' }}
+                    {{ 
+                      selectedActivity && (
+                        selectedActivity.enigmaNumber === 1 ? 'ENIGMA 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' :
+                        selectedActivity.enigmaNumber === 2 ? 'ENIGMA 2: Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?' :
+                        selectedActivity.type === 'esquema' ? 'ESQUEMA 1: El viaje de una gota de agua' :
+                        selectedActivity.explicaNumber === 1 ? 'EXPLICA EL ALUMNO 1: ¿Por qué los mares no se desbordan?' :
+                        selectedActivity.explicaNumber === 2 ? 'EXPLICA EL ALUMNO 2: ¿Por qué el mar es salado?' :
+                        'Evaluación'
+                      )
+                    }}
                   </h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
