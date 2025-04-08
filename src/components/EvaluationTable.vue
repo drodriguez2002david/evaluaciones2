@@ -89,7 +89,7 @@
                   </td>
                   <td data-cell-type="tema"></td>
                   <td v-for="(activity, index) in student.activities" :key="index"
-                      @click="openModal(student, activity)"
+                      @click="openModal(student, activity, index + 1)"
                       style="cursor: pointer;"
                       class="activity-cell"
                       :data-cell-type="getCellType(index)">
@@ -98,7 +98,7 @@
                   </td>
                   <td data-cell-type="tema"></td>
                   <td v-for="(activity, index) in student.activities2" :key="index"
-                      @click="openModal(student, activity)"
+                      @click="openModal(student, activity, index + 1)"
                       style="cursor: pointer;"
                       class="activity-cell"
                       :data-cell-type="getCellType(index)">
@@ -221,8 +221,8 @@ export default {
       return classes[status]
     }
 
-    const openModal = (student, activity) => {
-      selectedActivity.value = {...activity, studentName: student.name}
+    const openModal = (student, activity, enigmaNumber) => {
+      selectedActivity.value = {...activity, studentName: student.name, enigmaNumber}
       const modalElement = document.getElementById('evaluationModal')
       if (!modalElement._bsModal) {
         modalElement._bsModal = new bootstrap.Modal(modalElement)
@@ -259,7 +259,7 @@ export default {
 
     const filteredStudents = computed(() => {
       let result = students.value;
-      
+
       if (selectedStudent.value) {
         result = result.filter(student => student.id === selectedStudent.value);
       } else if (searchQuery.value) {
@@ -268,7 +268,7 @@ export default {
           student.name.toLowerCase().includes(query)
         );
       }
-      
+
       return result;
     });
 
