@@ -189,7 +189,8 @@ export default {
       selectedActivity,
       getStatusClass,
       openModal,
-      getCellType
+      getCellType,
+      isExpanded
     }
   }
 }
