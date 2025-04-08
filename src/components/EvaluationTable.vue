@@ -49,7 +49,12 @@
                       title="¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?">
                       Enigma 1
                   </th>
-                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded1 }">Enigma 2</th>
+                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded1 }"
+                      data-bs-toggle="tooltip" 
+                      data-bs-placement="top" 
+                      title="Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?">
+                      Enigma 2
+                  </th>
                   <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded1 }">Esquema 1</th>
                   <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">Explica 1</th>
                   <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">Explica 2</th>
@@ -68,7 +73,12 @@
                       title="¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?">
                       Enigma 1
                   </th>
-                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded2 }">Enigma 2</th>
+                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded2 }"
+                      data-bs-toggle="tooltip" 
+                      data-bs-placement="top" 
+                      title="Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?">
+                      Enigma 2
+                  </th>
                   <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded2 }">Esquema 1</th>
                   <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">Explica 1</th>
                   <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">Explica 2</th>
@@ -140,7 +150,8 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title">
-                    {{ selectedActivity && selectedActivity.enigmaNumber === 1 ? 'ENIGMA 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' : 'Evaluación' }}
+                    {{ selectedActivity && selectedActivity.enigmaNumber === 1 ? 'ENIGMA 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' :
+                       selectedActivity && selectedActivity.enigmaNumber === 2 ? 'ENIGMA 2: Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?' : 'Evaluación' }}
                   </h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
