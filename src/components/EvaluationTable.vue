@@ -191,10 +191,11 @@ export default {
 
 .status-circle {
   display: inline-block;
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  margin-left: 5px;
+  margin-left: 8px;
+  flex-shrink: 0;
 }
 
 .table-responsive {
@@ -244,6 +245,7 @@ export default {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-size: 13px;
 }
 
 .legend-item {
