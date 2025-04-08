@@ -277,4 +277,9 @@ export default {
   width: 12px;
   height: 12px;
 }
+
+.table thead .fixed-column {
+  background-color: #3b56a1;
+  color: white;
+}
 </style>
