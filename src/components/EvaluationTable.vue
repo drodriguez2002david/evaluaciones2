@@ -192,4 +192,8 @@ export default {
 .table tbody td:nth-child(2) {
   background-color: #eafaf1;
 }
+
+.table tbody tr:hover {
+  background-color: rgba(0, 77, 152, 0.15);
+}
 </style>
