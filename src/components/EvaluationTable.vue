@@ -13,38 +13,51 @@
               <thead>
                 <tr>
                   <th class="fixed-column" rowspan="2">ALUMNOS</th>
-                  <th data-column-type="tema" rowspan="2">TEMA</th>
-                  <th colspan="2" data-column-type="enigma">ENIGMA</th>
-                  <th data-column-type="esquema">ESQUEMA</th>
-                  <th colspan="2" data-column-type="explica">EXPLICA EL ALUMNO</th>
-                  <th colspan="5" data-column-type="coding">CODING</th>
-                  <th data-column-type="tema" rowspan="2">TEMA</th>
-                  <th colspan="2" data-column-type="enigma">ENIGMA</th>
-                  <th data-column-type="esquema">ESQUEMA</th>
-                  <th colspan="2" data-column-type="explica">EXPLICA EL ALUMNO</th>
-                  <th colspan="5" data-column-type="coding">CODING</th>
+                  <th data-column-type="tema">
+                    TEMA
+                  </th>
+                  <th colspan="2" data-column-type="enigma" :class="{ 'collapsed': !isExpanded1 }">ENIGMA</th>
+                  <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded1 }">ESQUEMA</th>
+                  <th colspan="2" data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">EXPLICA EL ALUMNO</th>
+                  <th colspan="5" data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">CODING</th>
+                  <th data-column-type="tema">
+                    TEMA
+                  </th>
+                  <th colspan="2" data-column-type="enigma" :class="{ 'collapsed': !isExpanded2 }">ENIGMA</th>
+                  <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded2 }">ESQUEMA</th>
+                  <th colspan="2" data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">EXPLICA EL ALUMNO</th>
+                  <th colspan="5" data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">CODING</th>
+
                 </tr>
                 <tr>
-                  <th data-column-type="enigma">Enigma 1</th>
-                  <th data-column-type="enigma">Enigma 2</th>
-                  <th data-column-type="esquema">Esquema 1</th>
-                  <th data-column-type="explica">Explica 1</th>
-                  <th data-column-type="explica">Explica 2</th>
-                  <th data-column-type="coding">Coding 1</th>
-                  <th data-column-type="coding">Coding 2</th>
-                  <th data-column-type="coding">Coding 3</th>
-                  <th data-column-type="coding">Coding 4</th>
-                  <th data-column-type="coding">Coding 5</th>
-                  <th data-column-type="enigma">Enigma 1</th>
-                  <th data-column-type="enigma">Enigma 2</th>
-                  <th data-column-type="esquema">Esquema 1</th>
-                  <th data-column-type="explica">Explica 1</th>
-                  <th data-column-type="explica">Explica 2</th>
-                  <th data-column-type="coding">Coding 1</th>
-                  <th data-column-type="coding">Coding 2</th>
-                  <th data-column-type="coding">Coding 3</th>
-                  <th data-column-type="coding">Coding 4</th>
-                  <th data-column-type="coding">Coding 5</th>
+                  <th data-column-type="tema" @click="isExpanded1 = !isExpanded1" style="cursor: pointer;">
+                    EL CICLO DEL AGUA
+                    <span class="toggle-icon">{{ isExpanded1 ? '▼' : '▶' }}</span>
+                  </th>
+                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded1 }">Enigma 1</th>
+                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded1 }">Enigma 2</th>
+                  <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded1 }">Esquema 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">Explica 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">Explica 2</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 1</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 2</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 3</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 4</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 5</th>
+                  <th data-column-type="tema" @click="isExpanded2 = !isExpanded2" style="cursor: pointer;">
+                    EL CICLO DEL AGUA 2
+                    <span class="toggle-icon">{{ isExpanded2 ? '▼' : '▶' }}</span>
+                  </th>
+                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded2 }">Enigma 1</th>
+                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded2 }">Enigma 2</th>
+                  <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded2 }">Esquema 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">Explica 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">Explica 2</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 1</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 2</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 3</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 4</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 5</th>
                 </tr>
               </thead>
               <tbody>
@@ -192,34 +205,10 @@ export default {
     }
 
     const getCellType = (index) => {
-      const pattern = [
-        { type: 'enigma', count: 2 },
-        { type: 'esquema', count: 1 },
-        { type: 'explica', count: 2 },
-        { type: 'coding', count: 5 }
-      ]
-      
-      let currentIndex = 0
-      for (const section of pattern) {
-        if (index < currentIndex + section.count) {
-          return section.type
-        }
-        currentIndex += section.count
-      }
+      if (index < 2) return 'enigma'
+      if (index === 2) return 'esquema'
+      if (index === 3 || index === 4) return 'explica'
       return 'coding'
-    }
-
-    const getColumnVisibility = () => {
-      const element = document.activeElement
-      if (!element) return 'none'
-      
-      const columnIndex = element.cellIndex
-      if (!columnIndex) return 'none'
-
-      const temaIndex = Math.floor((columnIndex - 1) / 10)
-      const isExpandedForTheme = eval(`isExpanded${temaIndex + 1}.value`)
-      
-      return isExpandedForTheme ? 'table-cell' : 'none'
     }
 
     onMounted(() => {
@@ -249,9 +238,14 @@ export default {
   font-size: 12px;
 }
 
-/* Manejo dinámico de columnas */
-[data-cell-type]:not([data-cell-type="tema"]) {
-  display: v-bind(`getColumnVisibility()`);
+/* Columnas para el primer tema */
+[data-cell-type]:not([data-cell-type="tema"]):nth-child(-n+12) {
+  display: v-bind(isExpanded1 ? 'table-cell' : 'none');
+}
+
+/* Columnas para el segundo tema */
+[data-cell-type]:not([data-cell-type="tema"]):nth-child(n+13) {
+  display: v-bind(isExpanded2 ? 'table-cell' : 'none');
 }
 .fixed-column {
   position: sticky;
