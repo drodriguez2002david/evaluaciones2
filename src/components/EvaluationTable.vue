@@ -207,6 +207,14 @@ export default {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+@media (max-width: 991px) {
+  .legend-container {
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
 .table {
   margin-bottom: 0;
   width: 100%;
