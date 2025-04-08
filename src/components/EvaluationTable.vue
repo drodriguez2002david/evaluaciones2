@@ -238,8 +238,14 @@ export default {
   font-size: 12px;
 }
 
-[data-cell-type]:not([data-cell-type="tema"]) {
+/* Columnas para el primer tema */
+[data-cell-type]:not([data-cell-type="tema"]):nth-child(-n+12) {
   display: v-bind(isExpanded1 ? 'table-cell' : 'none');
+}
+
+/* Columnas para el segundo tema */
+[data-cell-type]:not([data-cell-type="tema"]):nth-child(n+13) {
+  display: v-bind(isExpanded2 ? 'table-cell' : 'none');
 }
 .fixed-column {
   position: sticky;
