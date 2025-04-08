@@ -13,24 +13,30 @@
               <thead>
                 <tr>
                   <th class="fixed-column" rowspan="2">ALUMNOS</th>
-                  <th data-column-type="tema">TEMA</th>
-                  <th colspan="2" data-column-type="enigma">ENIGMA</th>
-                  <th data-column-type="esquema">ESQUEMA</th>
-                  <th colspan="2" data-column-type="explica">EXPLICA EL ALUMNO</th>
-                  <th colspan="5" data-column-type="coding">CODING</th>
+                  <th data-column-type="tema" @click="isExpanded = !isExpanded" style="cursor: pointer;">
+                    TEMA
+                    <span class="toggle-icon">{{ isExpanded ? '▼' : '▶' }}</span>
+                  </th>
+                  <th colspan="2" data-column-type="enigma" :class="{ 'collapsed': !isExpanded }">ENIGMA</th>
+                  <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded }">ESQUEMA</th>
+                  <th colspan="2" data-column-type="explica" :class="{ 'collapsed': !isExpanded }">EXPLICA EL ALUMNO</th>
+                  <th colspan="5" data-column-type="coding" :class="{ 'collapsed': !isExpanded }">CODING</th>
                 </tr>
                 <tr>
-                  <th data-column-type="tema">EL CICLO DEL AGUA</th>
-                  <th data-column-type="enigma">Enigma 1</th>
-                  <th data-column-type="enigma">Enigma 2</th>
-                  <th data-column-type="esquema">Esquema 1</th>
-                  <th data-column-type="explica">Explica 1</th>
-                  <th data-column-type="explica">Explica 2</th>
-                  <th data-column-type="coding">Coding 1</th>
-                  <th data-column-type="coding">Coding 2</th>
-                  <th data-column-type="coding">Coding 3</th>
-                  <th data-column-type="coding">Coding 4</th>
-                  <th data-column-type="coding">Coding 5</th>
+                  <th data-column-type="tema" @click="isExpanded = !isExpanded" style="cursor: pointer;">
+                    EL CICLO DEL AGUA
+                    <span class="toggle-icon">{{ isExpanded ? '▼' : '▶' }}</span>
+                  </th>
+                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded }">Enigma 1</th>
+                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded }">Enigma 2</th>
+                  <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded }">Esquema 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded }">Explica 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded }">Explica 2</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded }">Coding 1</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded }">Coding 2</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded }">Coding 3</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded }">Coding 4</th>
+                  <th data-column-type="coding" :class="{ 'collapsed': !isExpanded }">Coding 5</th>
                 </tr>
               </thead>
               <tbody>
@@ -121,6 +127,7 @@ import * as bootstrap from 'bootstrap'
 export default {
   name: 'EvaluationTable',
   setup() {
+    const isExpanded = ref(false)
     const students = ref([
       { id: 1, name: 'Patricia Álvarez', activities: Array(10).fill({ status: 'pending', chatUrl: '' }) },
       { id: 2, name: 'Fernando Castro', activities: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
@@ -189,6 +196,18 @@ export default {
 </script>
 
 <style scoped>
+.collapsed {
+  display: none;
+}
+
+.toggle-icon {
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+[data-cell-type]:not([data-cell-type="tema"]) {
+  display: v-bind(isExpanded ? 'table-cell' : 'none');
+}
 .fixed-column {
   position: sticky;
   left: 0;
