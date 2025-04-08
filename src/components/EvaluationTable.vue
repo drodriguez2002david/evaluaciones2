@@ -242,6 +242,10 @@ export default {
   background-color: #009742;
   color: white;
 }
+.table thead tr:first-child th:nth-child(3) {
+  background-color: #ffa641;
+  color: white;
+}
 
 .table tbody tr:hover td {
   background-color: rgba(0, 77, 152, 0.15) !important;
