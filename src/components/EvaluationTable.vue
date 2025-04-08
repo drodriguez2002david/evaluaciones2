@@ -7,8 +7,8 @@
             <img src="ICONO-AIDIN-512.png" alt="Logo" class="img-fluid mb-3" style="max-width: 75px;">
             <h1 style="font-family: 'Amaranth', sans-serif; font-weight: bold; color: #3b56a1;">Evaluaciones</h1>
           </div>
-          <div class="d-flex align-items-start">
-            <div class="table-responsive">
+          <div class="d-flex align-items-start flex-column flex-lg-row">
+            <div class="table-responsive mb-3 mb-lg-0">
               <table class="table table-bordered">
               <thead>
                 <tr>
@@ -246,6 +246,14 @@ export default {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   font-size: 13px;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .legend-container {
+    width: auto;
+    min-width: 250px;
+  }
 }
 
 .legend-item {
