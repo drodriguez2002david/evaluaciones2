@@ -239,6 +239,9 @@ export default {
       if (searchQuery.value) {
         selectedStudent.value = null;
       }
+      if (filteredStudents.value.length === 1) {
+        searchQuery.value = '';
+      }
     }
 
     const filteredStudents = computed(() => {
