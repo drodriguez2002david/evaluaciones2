@@ -211,7 +211,10 @@ export default {
   .legend-container {
     width: 90%;
     max-width: 90%;
-    margin: 0 auto;
+    margin: 20px auto 0;
+  }
+  .d-flex.align-items-start.flex-column.flex-lg-row {
+    align-items: center !important;
   }
 }
 
