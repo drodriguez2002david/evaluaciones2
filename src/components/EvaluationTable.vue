@@ -61,8 +61,8 @@
                       title="El viaje de una gota de agua">
                       Esquema 1
                   </th>
-                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">Explica el alumno 1</th>
-                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">Explica el alumno 2</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">Explica 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">Explica 2</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 1</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 2</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 3</th>
@@ -90,8 +90,8 @@
                       title="El viaje de una gota de agua">
                       Esquema 1
                   </th>
-                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">Explica el alumno 1</th>
-                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">Explica el alumno 2</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">Explica 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">Explica 2</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 1</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 2</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 3</th>
