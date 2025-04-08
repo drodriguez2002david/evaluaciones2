@@ -123,7 +123,9 @@
                       @click="openModal(student, activity, index + 1)"
                       style="cursor: pointer;"
                       class="activity-cell"
-                      :data-cell-type="getCellType(index)">
+                      :data-cell-type="getCellType(index)"
+                      :data-bs-toggle="activity.text === 'Explica el alumno 1' ? 'tooltip' : null"
+                      :title="activity.text === 'Explica el alumno 1' ? '¿Por qué los mares no se desbordan?' : null">
                     {{ activity.grade || '-' }}
                     <span :class="['status-circle', getStatusClass(activity.status)]"></span>
                   </td>
@@ -212,7 +214,7 @@ export default {
     const selectedStudent = ref(null)
     const searchQuery = ref('')
     const students = ref([
-      { id: 1, name: 'Patricia Álvarez', activities: Array(10).fill({ status: 'pending', chatUrl: '' }), activities2: Array(10).fill({ status: 'pending', chatUrl: '' }) },
+      { id: 1, name: 'Patricia Álvarez', activities: Array(10).fill({ status: 'pending', chatUrl: '', text: 'Explica el alumno 1' }), activities2: Array(10).fill({ status: 'pending', chatUrl: '', text: 'Explica el alumno 1' }) },
       { id: 2, name: 'Fernando Castro', activities: Array(10).fill({ status: 'submitted', chatUrl: '' }), activities2: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
       { id: 3, name: 'Andrés Delgado', activities: Array(10).fill({ status: 'aiEvaluated', grade: 8, chatUrl: '' }), activities2: Array(10).fill({ status: 'aiEvaluated', grade: 8, chatUrl: '' }) },
       { id: 4, name: 'Carmen Díaz', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }), activities2: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
