@@ -242,7 +242,9 @@ export default {
   background-color: #009742;
   color: white;
 }
-.table thead tr:first-child th:nth-child(3) {
+.table thead tr:first-child th:nth-child(3),
+.table thead tr:last-child th:nth-child(2),
+.table thead tr:last-child th:nth-child(3) {
   background-color: #ffa641;
   color: white;
 }
