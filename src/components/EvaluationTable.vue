@@ -165,8 +165,8 @@
                         selectedActivity.enigmaNumber === 1 ? 'ENIGMA 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' :
                         selectedActivity.enigmaNumber === 2 ? 'ENIGMA 2: Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?' :
                         selectedActivity.type === 'esquema' ? 'ESQUEMA 1: El viaje de una gota de agua' :
-                        selectedActivity.explicaNumber === 1 ? 'EXPLICA EL ALUMNO 1: ¿Por qué los mares no se desbordan?' :
-                        selectedActivity.explicaNumber === 2 ? 'EXPLICA EL ALUMNO 2: ¿Por qué el mar es salado?' :
+                        selectedActivity.type === 'explica' && selectedActivity.explicaNumber === 1 ? 'EXPLICA EL ALUMNO 1: ¿Por qué los mares no se desbordan?' :
+                        selectedActivity.type === 'explica' && selectedActivity.explicaNumber === 2 ? 'EXPLICA EL ALUMNO 2: ¿Por qué el mar es salado?' :
                         'Evaluación'
                       )
                     }}
@@ -254,7 +254,7 @@ export default {
 
     const openModal = (student, activity, index) => {
       const type = getCellType(index - 1);
-      const explicaNumber = type === 'explica' ? Math.floor((index - 2) / 2) : null;
+      const explicaNumber = type === 'explica' ? Math.floor((index - 2) / 2) + 1 : null;
       selectedActivity.value = {...activity, studentName: student.name, enigmaNumber: index, type, explicaNumber}
       const modalElement = document.getElementById('evaluationModal')
       if (!modalElement._bsModal) {
