@@ -90,7 +90,7 @@
                       title="El viaje de una gota de agua">
                       Esquema 1
                   </th>
-                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">Explica 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }" data-bs-toggle="tooltip" data-bs-placement="top" title="¿Por qué los mares no se desbordan?">Explica 1</th>
                   <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }" data-bs-toggle="tooltip" data-bs-placement="top" title="¿Por qué el mar es salado?">Explica 2</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 1</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 2</th>
