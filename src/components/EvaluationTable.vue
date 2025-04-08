@@ -205,10 +205,34 @@ export default {
     }
 
     const getCellType = (index) => {
-      if (index < 2) return 'enigma'
-      if (index === 2) return 'esquema'
-      if (index === 3 || index === 4) return 'explica'
+      const pattern = [
+        { type: 'enigma', count: 2 },
+        { type: 'esquema', count: 1 },
+        { type: 'explica', count: 2 },
+        { type: 'coding', count: 5 }
+      ]
+      
+      let currentIndex = 0
+      for (const section of pattern) {
+        if (index < currentIndex + section.count) {
+          return section.type
+        }
+        currentIndex += section.count
+      }
       return 'coding'
+    }
+
+    const getColumnVisibility = () => {
+      const element = document.activeElement
+      if (!element) return 'none'
+      
+      const columnIndex = element.cellIndex
+      if (!columnIndex) return 'none'
+
+      const temaIndex = Math.floor((columnIndex - 1) / 10)
+      const isExpandedForTheme = eval(`isExpanded${temaIndex + 1}.value`)
+      
+      return isExpandedForTheme ? 'table-cell' : 'none'
     }
 
     onMounted(() => {
@@ -238,14 +262,9 @@ export default {
   font-size: 12px;
 }
 
-/* Columnas para el primer tema */
-[data-cell-type]:not([data-cell-type="tema"]):nth-child(-n+12) {
-  display: v-bind(isExpanded1 ? 'table-cell' : 'none');
-}
-
-/* Columnas para el segundo tema */
-[data-cell-type]:not([data-cell-type="tema"]):nth-child(n+13) {
-  display: v-bind(isExpanded2 ? 'table-cell' : 'none');
+/* Manejo dinámico de columnas */
+[data-cell-type]:not([data-cell-type="tema"]) {
+  display: v-bind(`getColumnVisibility()`);
 }
 .fixed-column {
   position: sticky;
