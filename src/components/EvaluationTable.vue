@@ -202,12 +202,12 @@ export default {
   background-color: #eafaf1;
 }
 
-.table tbody tr:hover {
-  background-color: rgba(0, 77, 152, 0.15);
+.table tbody tr:hover td {
+  background-color: rgba(0, 77, 152, 0.15) !important;
 }
 
-.activity-cell:hover {
-  background-color: rgba(0, 77, 152, 0.1);
+.table tbody tr:hover td.fixed-column {
+  background-color: rgba(0, 77, 152, 0.15) !important;
 }
 
 .activity-cell:active {
