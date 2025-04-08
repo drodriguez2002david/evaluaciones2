@@ -61,18 +61,8 @@
                       title="El viaje de una gota de agua">
                       Esquema 1
                   </th>
-                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }"
-                      data-bs-toggle="tooltip"
-                      data-bs-placement="top"
-                      title="¿Por qué los mares no se desbordan?">
-                      Explica el alumno 1
-                  </th>
-                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }"
-                      data-bs-toggle="tooltip"
-                      data-bs-placement="top"
-                      title="¿Por qué el mar es salado?">
-                      Explica el alumno 2
-                  </th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">Explica el alumno 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">Explica el alumno 2</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 1</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 2</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded1 }">Coding 3</th>
@@ -100,18 +90,8 @@
                       title="El viaje de una gota de agua">
                       Esquema 1
                   </th>
-                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }"
-                      data-bs-toggle="tooltip"
-                      data-bs-placement="top"
-                      title="¿Por qué los mares no se desbordan?">
-                      Explica el alumno 1
-                  </th>
-                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }"
-                      data-bs-toggle="tooltip"
-                      data-bs-placement="top"
-                      title="¿Por qué el mar es salado?">
-                      Explica el alumno 2
-                  </th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">Explica el alumno 1</th>
+                  <th data-column-type="explica" :class="{ 'collapsed': !isExpanded2 }">Explica el alumno 2</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 1</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 2</th>
                   <th data-column-type="coding" :class="{ 'collapsed': !isExpanded2 }">Coding 3</th>
@@ -180,11 +160,9 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title">
-                    {{ selectedActivity && selectedActivity.type === 'enigma' && selectedActivity.enigmaNumber === 1 ? 'ENIGMA 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' :
-                       selectedActivity && selectedActivity.type === 'enigma' && selectedActivity.enigmaNumber === 2 ? 'ENIGMA 2: Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?' :
-                       selectedActivity && selectedActivity.type === 'esquema' ? 'ESQUEMA 1: El viaje de una gota de agua' :
-                       selectedActivity && selectedActivity.type === 'explica' && (selectedActivity.index === 3 || (selectedActivity.index >= 7 && selectedActivity.index <= 11)) ? 'Explica el alumno 1: ¿Por qué los mares no se desbordan?' :
-                       selectedActivity && selectedActivity.type === 'explica' && (selectedActivity.index === 4 || (selectedActivity.index >= 12 && selectedActivity.index <= 16)) ? 'Explica el alumno 2: ¿Por qué el mar es salado?' : 'Evaluación' }}
+                    {{ selectedActivity && selectedActivity.enigmaNumber === 1 ? 'ENIGMA 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' :
+                       selectedActivity && selectedActivity.enigmaNumber === 2 ? 'ENIGMA 2: Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?' :
+                       selectedActivity && selectedActivity.type === 'esquema' ? 'ESQUEMA 1: El viaje de una gota de agua' : 'Evaluación' }}
                   </h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
@@ -269,7 +247,7 @@ export default {
 
     const openModal = (student, activity, index) => {
       const type = getCellType(index - 1);
-      selectedActivity.value = {...activity, studentName: student.name, enigmaNumber: index, type, index}
+      selectedActivity.value = {...activity, studentName: student.name, enigmaNumber: index, type}
       const modalElement = document.getElementById('evaluationModal')
       if (!modalElement._bsModal) {
         modalElement._bsModal = new bootstrap.Modal(modalElement)
