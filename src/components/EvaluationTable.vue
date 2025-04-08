@@ -43,7 +43,12 @@
                     EL CICLO DEL AGUA
                     <span class="toggle-icon">{{ isExpanded1 ? '▼' : '▶' }}</span>
                   </th>
-                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded1 }">Enigma 1</th>
+                  <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded1 }" 
+                      data-bs-toggle="tooltip" 
+                      data-bs-placement="top" 
+                      title="¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?">
+                      Enigma 1
+                  </th>
                   <th data-column-type="enigma" :class="{ 'collapsed': !isExpanded1 }">Enigma 2</th>
                   <th data-column-type="esquema" :class="{ 'collapsed': !isExpanded1 }">Esquema 1</th>
                   <th data-column-type="explica" :class="{ 'collapsed': !isExpanded1 }">Explica 1</th>
@@ -228,7 +233,10 @@ export default {
     }
 
     onMounted(() => {
-      import('bootstrap/dist/js/bootstrap.bundle.min.js')
+      import('bootstrap/dist/js/bootstrap.bundle.min.js').then(() => {
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+      })
     })
 
     const toggleStudentFilter = (student) => {
