@@ -162,7 +162,7 @@
                   <h5 class="modal-title">
                     {{ selectedActivity && selectedActivity.enigmaNumber === 1 ? 'ENIGMA 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' :
                        selectedActivity && selectedActivity.enigmaNumber === 2 ? 'ENIGMA 2: Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?' :
-                       selectedActivity && selectedActivity.esquemaNumber === 1 ? 'ESQUEMA 1: El viaje de una gota de agua' : 'Evaluación' }}
+                       selectedActivity && selectedActivity.type === 'esquema' ? 'ESQUEMA 1: El viaje de una gota de agua' : 'Evaluación' }}
                   </h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
@@ -245,8 +245,9 @@ export default {
       return classes[status]
     }
 
-    const openModal = (student, activity, enigmaNumber) => {
-      selectedActivity.value = {...activity, studentName: student.name, enigmaNumber}
+    const openModal = (student, activity, index) => {
+      const type = getCellType(index - 1);
+      selectedActivity.value = {...activity, studentName: student.name, enigmaNumber: index, type}
       const modalElement = document.getElementById('evaluationModal')
       if (!modalElement._bsModal) {
         modalElement._bsModal = new bootstrap.Modal(modalElement)
