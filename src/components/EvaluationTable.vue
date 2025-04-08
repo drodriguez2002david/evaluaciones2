@@ -112,9 +112,7 @@
                       @click="openModal(student, activity, index + 1)"
                       style="cursor: pointer;"
                       class="activity-cell"
-                      :data-cell-type="getCellType(index)"
-                      :data-bs-toggle="isExplicaAlumno1(index) ? 'tooltip' : null"
-                      :title="isExplicaAlumno1(index) ? '¿Por qué los mares no se desbordan?' : null">
+                      :data-cell-type="getCellType(index)">
                     {{ activity.grade || '-' }}
                     <span :class="['status-circle', getStatusClass(activity.status)]"></span>
                   </td>
@@ -162,9 +160,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title">
-                    {{ selectedActivity && selectedActivity.type === 'explica' && isExplicaAlumno1(selectedActivity.index) ? 'Explica el alumno 1: ¿Por qué los mares no se desbordan?' :
-                       selectedActivity && selectedActivity.type === 'explica' ? 'Explica el alumno 2: ¿Por qué el mar es salado?' :
-                       selectedActivity && selectedActivity.enigmaNumber === 1 ? 'ENIGMA 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' :
+                    {{ selectedActivity && selectedActivity.enigmaNumber === 1 ? 'ENIGMA 1: ¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' :
                        selectedActivity && selectedActivity.enigmaNumber === 2 ? 'ENIGMA 2: Si el agua de los ríos, la nieve y la lluvia es dulce, ¿cómo es posible que el agua del mar sea salada?' :
                        selectedActivity && selectedActivity.type === 'esquema' ? 'ESQUEMA 1: El viaje de una gota de agua' : 'Evaluación' }}
                   </h5>
@@ -264,10 +260,6 @@ export default {
       if (index === 2) return 'esquema'
       if (index === 3 || index === 4) return 'explica'
       return 'coding'
-    }
-
-    const isExplicaAlumno1 = (index) => {
-      return (index === 3 || (index >= 7 && index <= 11));
     }
 
     onMounted(() => {
