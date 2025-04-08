@@ -139,7 +139,9 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Evaluación</h5>
+                  <h5 class="modal-title">
+                    {{ selectedActivity && selectedActivity.enigmaNumber === 1 ? '¿Por qué los mares no crecen sin parar? ¿Por qué los ríos no se vacían?' : 'Evaluación' }}
+                  </h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body" v-if="selectedActivity">
