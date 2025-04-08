@@ -14,15 +14,15 @@
                 <tr>
                   <th class="fixed-column" rowspan="2">ALUMNOS</th>
                   <th>TEMA</th>
-                  <th colspan="2">ACERTIJO</th>
+                  <th colspan="2">ENIGMA</th>
                   <th>ESQUEMA</th>
                   <th colspan="2">EXPLICA EL ALUMNO</th>
                   <th colspan="5">CODING</th>
                 </tr>
                 <tr>
                   <th>EL CICLO DEL AGUA</th>
-                  <th>Acertijo 1</th>
-                  <th>Acertijo 2</th>
+                  <th>Enigma 1</th>
+                  <th>Enigma 2</th>
                   <th>Esquema 1</th>
                   <th>Explica 1</th>
                   <th>Explica 2</th>
