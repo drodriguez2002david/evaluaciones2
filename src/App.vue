@@ -4,9 +4,15 @@ import EvaluationTable from './components/EvaluationTable.vue'
 </script>
 
 <template>
-  <EvaluationTable />
+  <div class="app-container">
+    <EvaluationTable />
+  </div>
 </template>
 
 <style>
-/* Eliminamos el .app-container que podría estar causando problemas de layout */
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
 </style>
