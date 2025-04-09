@@ -559,14 +559,39 @@ export default {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.table thead th {
+.table thead tr:first-child th {
   position: sticky;
   top: 0;
   z-index: 2;
+  background-color: inherit;
+}
+
+.table thead tr:last-child th {
+  position: sticky;
+  top: 42px;
+  z-index: 2;
+  background-color: inherit;
 }
 
 .table thead th.fixed-column {
   z-index: 3;
+}
+
+/* Mantener los colores de fondo en las celdas fijas */
+[data-column-type="tema"].fixed-column {
+  background-color: #0799fe !important;
+}
+[data-column-type="enigma"].fixed-column {
+  background-color: #ffa641 !important;
+}
+[data-column-type="esquema"].fixed-column {
+  background-color: #63038d !important;
+}
+[data-column-type="explica"].fixed-column {
+  background-color: #009742 !important;
+}
+[data-column-type="coding"].fixed-column {
+  background-color: #cbc200 !important;
 }
 
 @media (max-width: 991px) {
