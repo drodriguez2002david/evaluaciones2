@@ -238,7 +238,8 @@ export default {
         activities: Array(10).fill().map((_, index) => ({ 
           status: 'pending', 
           chatUrl: index === 1 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=9' :
-                  index === 0 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' : '',
+                  index === 0 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' : 
+                  '',
           text: 'Explica el alumno 1' 
         })), 
         activities2: Array(10).fill().map((_, index) => ({ 
@@ -304,12 +305,24 @@ export default {
     const openModal = (student, activity, index) => {
       const type = getCellType(index - 1);
       const explicaNumber = type === 'explica' ? (index === 4 || index === 16 ? 1 : 2) : null;
+
+      // Asignar la URL correcta según el enigma
+      let chatUrl = activity.chatUrl;
+      if (type === 'enigma') {
+        if (index === 2 || index === 14) { // Enigma 2
+          chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=9';
+        } else if (index === 1 || index === 13) { // Enigma 1
+          chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8';
+        }
+      }
+
       selectedActivity.value = {
         ...activity, 
         studentName: student.name, 
         enigmaNumber: index, 
         type, 
         explicaNumber,
+        chatUrl,
         teacherGrade: activity.status === 'aiEvaluated' ? activity.grade : ''
       }
       const modalElement = document.getElementById('evaluationModal')
