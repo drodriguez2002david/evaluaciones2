@@ -167,9 +167,9 @@
                         selectedActivity.type === 'esquema' ? 'ESQUEMA 1: El viaje de una gota de agua' :
                         selectedActivity.type === 'explica' && selectedActivity.explicaNumber === 1 ? 'EXPLICA EL ALUMNO 1: ¿Por qué los mares no se desbordan?' :
                         selectedActivity.type === 'explica' && selectedActivity.explicaNumber === 2 ? 'EXPLICA EL ALUMNO 2: ¿Por qué el mar es salado?' :
-                        selectedActivity.type === 'coding' && selectedActivity.enigmaNumber === 7 ? 'CODING 1: CONDENSACIÓN' :
-                        selectedActivity.type === 'coding' && selectedActivity.enigmaNumber === 8 ? 'CODING 2: NUBES' :
-                        selectedActivity.type === 'coding' && selectedActivity.enigmaNumber === 9 ? 'CODING 3: PRECIPITACIÓN' :
+                        selectedActivity.type === 'coding' && (selectedActivity.enigmaNumber === 6 || selectedActivity.enigmaNumber === 18) ? 'CODING 1: CONDENSACIÓN' :
+                        selectedActivity.type === 'coding' && (selectedActivity.enigmaNumber === 7 || selectedActivity.enigmaNumber === 19) ? 'CODING 2: NUBES' :
+                        selectedActivity.type === 'coding' && (selectedActivity.enigmaNumber === 8 || selectedActivity.enigmaNumber === 20) ? 'CODING 3: PRECIPITACIÓN' :
                         selectedActivity.type === 'coding' && (selectedActivity.enigmaNumber === 9 || selectedActivity.enigmaNumber === 21) ? 'CODING 4: ESCORRENTÍA' :
                         selectedActivity.type === 'coding' && (selectedActivity.enigmaNumber === 10 || selectedActivity.enigmaNumber === 22) ? 'CODING 5: EVAPORACIÓN' :
                         'Evaluación'
