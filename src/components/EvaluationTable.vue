@@ -179,7 +179,10 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body" v-if="selectedActivity">
-                  <iframe :src="selectedActivity.chatUrl" class="w-100" style="height: 400px;"></iframe>
+                  <div v-if="selectedActivity.status === 'notStarted'" class="d-flex align-items-center justify-content-center" style="height: 400px;">
+                    <h2 class="text-center text-secondary">ACTIVIDAD NO ACTIVADA</h2>
+                  </div>
+                  <iframe v-else :src="selectedActivity.chatUrl" class="w-100" style="height: 400px;"></iframe>
                   <div class="mt-3">
                     <div class="mb-3" v-if="selectedActivity.status === 'aiEvaluated' || selectedActivity.status === 'submitted'">
                       <label class="form-label">Nota AIDIN</label>
