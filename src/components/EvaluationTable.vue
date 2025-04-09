@@ -184,7 +184,7 @@
                     <div class="mb-3" v-if="selectedActivity.status === 'aiEvaluated' || selectedActivity.status === 'submitted'">
                       <label class="form-label">Nota AIDIN</label>
                       <div class="input-group">
-                        <input type="text" class="form-control" :value="selectedActivity.status === 'submitted' ? '--' : selectedActivity.grade" readonly>
+                        <input type="text" class="form-control" :value="selectedActivity.status === 'submitted' ? '-- (No evaluada por AIDIN)' : selectedActivity.grade" readonly>
                         <div class="input-group-text" v-if="selectedActivity.status === 'aiEvaluated'">
                           <input type="checkbox" v-model="selectedActivity.accepted" @change="handleAcceptedChange">
                         </div>
