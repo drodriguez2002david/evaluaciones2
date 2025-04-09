@@ -234,20 +234,40 @@ export default {
     const selectedStudent = ref(null)
     const searchQuery = ref('')
     const students = ref([
-      { id: 1, name: 'Patricia Álvarez', activities: Array(10).fill().map((_, index) => ({ 
-        status: 'pending', 
-        chatUrl: index === 0 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' : '', 
-        text: 'Explica el alumno 1' 
-      })), activities2: Array(10).fill({ status: 'pending', chatUrl: '', text: 'Explica el alumno 1' }) },
-      { id: 2, name: 'Fernando Castro', activities: Array(10).fill().map((_, index) => ({ 
-        status: 'submitted', 
-        chatUrl: index === 0 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' : '' 
-      })), activities2: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
-      { id: 3, name: 'Andrés Delgado', activities: Array(10).fill().map((_, index) => ({ 
-        status: 'aiEvaluated', 
-        grade: 8, 
-        chatUrl: index === 0 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' : ''
-      })), activities2: Array(10).fill({ status: 'aiEvaluated', grade: 8, chatUrl: '' }) },
+      { id: 1, name: 'Patricia Álvarez', 
+        activities: Array(10).fill().map((_, index) => ({ 
+          status: 'pending', 
+          chatUrl: index === 0 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' : '', 
+          text: 'Explica el alumno 1' 
+        })), 
+        activities2: Array(10).fill().map((_, index) => ({ 
+          status: 'pending', 
+          chatUrl: index === 0 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' : '', 
+          text: 'Explica el alumno 1' 
+        }))
+      },
+      { id: 2, name: 'Fernando Castro', 
+        activities: Array(10).fill().map((_, index) => ({ 
+          status: 'submitted', 
+          chatUrl: index === 0 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' : '' 
+        })), 
+        activities2: Array(10).fill().map((_, index) => ({ 
+          status: 'submitted', 
+          chatUrl: index === 0 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' : '' 
+        }))
+      },
+      { id: 3, name: 'Andrés Delgado', 
+        activities: Array(10).fill().map((_, index) => ({ 
+          status: 'aiEvaluated', 
+          grade: 8, 
+          chatUrl: index === 0 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' : ''
+        })), 
+        activities2: Array(10).fill().map((_, index) => ({ 
+          status: 'aiEvaluated', 
+          grade: 8, 
+          chatUrl: index === 0 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' : ''
+        }))
+      },
       { id: 4, name: 'Carmen Díaz', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }), activities2: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
       { id: 5, name: 'David Fernández', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }), activities2: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
       { id: 6, name: 'Ana García', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }), activities2: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
