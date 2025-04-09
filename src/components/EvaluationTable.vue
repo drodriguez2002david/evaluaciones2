@@ -186,13 +186,13 @@
                       <div class="input-group">
                         <input type="number" class="form-control" v-model="selectedActivity.grade" readonly>
                         <div class="input-group-text">
-                          <input type="checkbox" v-model="selectedActivity.accepted">
+                          <input type="checkbox" v-model="selectedActivity.accepted" @change="handleAcceptedChange">
                         </div>
                       </div>
                     </div>
                     <div class="mb-3">
                       <label class="form-label">Nota del profesor</label>
-                      <input type="number" class="form-control" v-model="selectedActivity.teacherGrade">
+                      <input type="number" class="form-control" v-model="selectedActivity.teacherGrade" :disabled="selectedActivity.accepted">
                     </div>
                     <div class="mb-3">
                       <label class="form-label">Comentarios</label>
@@ -305,6 +305,12 @@ export default {
     const handleSearch = () => {
       if (searchQuery.value) {
         selectedStudent.value = null;
+      }
+    }
+
+    const handleAcceptedChange = () => {
+      if (selectedActivity.value.accepted) {
+        selectedActivity.value.teacherGrade = selectedActivity.value.grade;
       }
     }
 
