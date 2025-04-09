@@ -187,7 +187,7 @@
                     <h2 class="text-center mb-3" style="font-family: 'Amaranth', sans-serif; font-weight: bold; color: #dc3545;">ACTIVIDAD NO ENTREGADA POR EL ALUMNO</h2>
                     <img src="/NO-ENTREGADA.png" alt="Actividad no entregada" style="width: 100px;">
                   </div>
-                  <iframe v-else :src="selectedActivity.chatUrl" class="w-100" style="height: 400px;"></iframe>
+                  <iframe v-else-if="selectedActivity.chatUrl" :src="selectedActivity.chatUrl" class="w-100" style="height: 400px;"></iframe>
                   <div class="mt-3" v-if="selectedActivity.status !== 'notStarted'">
                     <div class="mb-3" v-if="selectedActivity.status === 'aiEvaluated' || selectedActivity.status === 'submitted'">
                       <label class="form-label">Nota AIDIN</label>
@@ -240,7 +240,11 @@ export default {
         text: 'Explica el alumno 1' 
       })), activities2: Array(10).fill({ status: 'pending', chatUrl: '', text: 'Explica el alumno 1' }) },
       { id: 2, name: 'Fernando Castro', activities: Array(10).fill({ status: 'submitted', chatUrl: '' }), activities2: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
-      { id: 3, name: 'Andrés Delgado', activities: Array(10).fill({ status: 'aiEvaluated', grade: 8, chatUrl: '' }), activities2: Array(10).fill({ status: 'aiEvaluated', grade: 8, chatUrl: '' }) },
+      { id: 3, name: 'Andrés Delgado', activities: Array(10).fill().map((_, index) => ({ 
+        status: 'aiEvaluated', 
+        grade: 8, 
+        chatUrl: index === 0 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' : ''
+      })), activities2: Array(10).fill({ status: 'aiEvaluated', grade: 8, chatUrl: '' }) },
       { id: 4, name: 'Carmen Díaz', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }), activities2: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
       { id: 5, name: 'David Fernández', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }), activities2: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
       { id: 6, name: 'Ana García', activities: Array(10).fill({ status: 'notStarted', chatUrl: '' }), activities2: Array(10).fill({ status: 'notStarted', chatUrl: '' }) },
