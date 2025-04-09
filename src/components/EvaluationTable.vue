@@ -707,8 +707,20 @@ export default {
 }
 
 .table thead .fixed-column {
-  background-color: #3b56a1;
+  background-color: #3b56a1 !important;
   color: white;
+}
+
+.table thead tr:first-child .fixed-column {
+  background-color: #3b56a1 !important;
+  top: 0;
+  z-index: 4;
+}
+
+.table thead tr:last-child .fixed-column {
+  background-color: #3b56a1 !important;
+  top: 42px;
+  z-index: 4;
 }
 
 .selected-student {
