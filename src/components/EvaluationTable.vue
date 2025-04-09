@@ -349,7 +349,10 @@ export default {
       }
       const modalElement = document.getElementById('evaluationModal')
       if (!modalElement._bsModal) {
-        modalElement._bsModal = new bootstrap.Modal(modalElement)
+        modalElement._bsModal = new bootstrap.Modal(modalElement, {
+          backdrop: 'static',
+          keyboard: false
+        })
       }
       modalElement._bsModal.show()
     }
