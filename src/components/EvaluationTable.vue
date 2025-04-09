@@ -239,7 +239,10 @@ export default {
         chatUrl: index === 0 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' : '', 
         text: 'Explica el alumno 1' 
       })), activities2: Array(10).fill({ status: 'pending', chatUrl: '', text: 'Explica el alumno 1' }) },
-      { id: 2, name: 'Fernando Castro', activities: Array(10).fill({ status: 'submitted', chatUrl: '' }), activities2: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
+      { id: 2, name: 'Fernando Castro', activities: Array(10).fill().map((_, index) => ({ 
+        status: 'submitted', 
+        chatUrl: index === 0 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' : '' 
+      })), activities2: Array(10).fill({ status: 'submitted', chatUrl: '' }) },
       { id: 3, name: 'Andrés Delgado', activities: Array(10).fill().map((_, index) => ({ 
         status: 'aiEvaluated', 
         grade: 8, 
