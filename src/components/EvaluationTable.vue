@@ -327,6 +327,8 @@ export default {
       } else if (type === 'coding') {
         if (index === 6 || index === 18) { // Coding 1
           chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=21';
+        } else if (index === 7 || index === 19) { // Coding 2
+          chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=22';
         }
       }
 
