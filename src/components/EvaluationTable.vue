@@ -179,8 +179,8 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body" v-if="selectedActivity">
-                  <div v-if="selectedActivity.status === 'notStarted'" class="d-flex align-items-center justify-content-center" style="height: 400px;">
-                    <h2 class="text-center text-secondary">ACTIVIDAD NO ACTIVADA</h2>
+                  <div v-if="selectedActivity.status === 'notStarted'" class="d-flex align-items-center justify-content-center" style="height: 200px;">
+                    <h2 class="text-center" style="font-family: 'Amaranth', sans-serif; font-weight: bold; color: #dc3545;">ACTIVIDAD NO ACTIVADA</h2>
                   </div>
                   <iframe v-else :src="selectedActivity.chatUrl" class="w-100" style="height: 400px;"></iframe>
                   <div class="mt-3">
