@@ -184,7 +184,7 @@
                     <img src="/actividad-bloqueada.png" alt="Actividad bloqueada" style="width: 100px;">
                   </div>
                   <iframe v-else :src="selectedActivity.chatUrl" class="w-100" style="height: 400px;"></iframe>
-                  <div class="mt-3">
+                  <div class="mt-3" v-if="selectedActivity.status !== 'notStarted'">
                     <div class="mb-3" v-if="selectedActivity.status === 'aiEvaluated' || selectedActivity.status === 'submitted'">
                       <label class="form-label">Nota AIDIN</label>
                       <div class="input-group">
