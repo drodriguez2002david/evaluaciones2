@@ -357,20 +357,20 @@ export default {
       if (selectedActivity.value) {
         const studentIndex = students.value.findIndex(s => s.name === selectedActivity.value.studentName);
         const activityIndex = selectedActivity.value.enigmaNumber - 1;
-        
+
         if (studentIndex !== -1) {
           const isSecondTheme = activityIndex >= 12;
           const activities = isSecondTheme ? 'activities2' : 'activities';
           const adjustedIndex = isSecondTheme ? activityIndex - 12 : activityIndex;
-          
+
           const finalGrade = selectedActivity.value.accepted ? 
             selectedActivity.value.grade : 
             selectedActivity.value.teacherGrade;
-          
+
           const newStatus = (selectedActivity.value.teacherGrade !== '' && !isNaN(selectedActivity.value.teacherGrade)) ? 
             'teacherEvaluated' : 
             students.value[studentIndex][activities][adjustedIndex].status;
-          
+
           students.value[studentIndex][activities][adjustedIndex] = {
             ...students.value[studentIndex][activities][adjustedIndex],
             status: newStatus,
@@ -379,7 +379,7 @@ export default {
           };
         }
       }
-      
+
       const modalElement = document.getElementById('evaluationModal');
       if (modalElement._bsModal) {
         modalElement._bsModal.hide();
