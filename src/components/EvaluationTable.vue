@@ -243,7 +243,7 @@ export default {
           text: 'Explica el alumno 1' 
         })), 
         activities2: Array(10).fill().map((_, index) => ({ 
-          status: index >= 6 ? 'notStarted' : 'pending', // Los índices 6-10 son las actividades Coding
+          status: (index >= 6 || index === 6) ? 'notStarted' : 'pending', // Coding activities and specifically Coding 1
           chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8'
         }))
       },
