@@ -270,15 +270,15 @@ export default {
         }))
       },
       { id: 4, name: 'Carmen Díaz', activities: Array(10).fill({ status: 'notStarted', chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' }), activities2: Array(10).fill().map((_, index) => ({ 
-          status: index >= 6 ? 'notStarted' : 'notStarted',
+          status: 'notStarted',
           chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8'
         })) },
       { id: 5, name: 'David Fernández', activities: Array(10).fill({ status: 'notStarted', chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' }), activities2: Array(10).fill().map((_, index) => ({ 
-          status: index >= 6 ? 'notStarted' : 'notStarted',
+          status: 'notStarted',
           chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8'
         })) },
       { id: 6, name: 'Ana García', activities: Array(10).fill({ status: 'notStarted', chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' }), activities2: Array(10).fill().map((_, index) => ({ 
-          status: index >= 6 ? 'notStarted' : 'notStarted',
+          status: 'notStarted',
           chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8'
         })) },
       { id: 7, name: 'Pablo Gómez', activities: Array(10).fill({ status: 'submitted', chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' }), activities2: Array(10).fill().map((_, index) => ({ 
@@ -290,7 +290,7 @@ export default {
           chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8'
         })) },
       { id: 9, name: 'María López', activities: Array(10).fill({ status: 'notStarted', chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' }), activities2: Array(10).fill().map((_, index) => ({ 
-          status: index >= 6 ? 'notStarted' : 'notStarted',
+          status: 'notStarted',
           chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8'
         })) },
       { id: 10, name: 'Juan Martínez', activities: Array(10).fill({ status: 'submitted', chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' }), activities2: Array(10).fill().map((_, index) => ({ 
@@ -302,7 +302,7 @@ export default {
           chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8'
         })) },
       { id: 12, name: 'Roberto Muñoz', activities: Array(10).fill({ status: 'notStarted', chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' }), activities2: Array(10).fill().map((_, index) => ({ 
-          status: index >= 6 ? 'notStarted' : 'notStarted',
+          status: 'notStarted',
           chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8'
         })) },
       { id: 13, name: 'Lucía Navarro', activities: Array(10).fill({ status: 'aiEvaluated', grade: 9, chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' }), activities2: Array(10).fill().map((_, index) => ({ 
@@ -311,7 +311,7 @@ export default {
           chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8'
         })) },
       { id: 14, name: 'Cristina Ortiz', activities: Array(10).fill({ status: 'notStarted', chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' }), activities2: Array(10).fill().map((_, index) => ({ 
-          status: index >= 6 ? 'notStarted' : 'notStarted',
+          status: 'notStarted',
           chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8'
         })) },
       { id: 15, name: 'Sofia Pérez', activities: Array(10).fill({ status: 'pending', chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' }), activities2: Array(10).fill().map((_, index) => ({ 
@@ -319,7 +319,7 @@ export default {
           chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8'
         })) },
       { id: 16, name: 'Alberto Romero', activities: Array(10).fill({ status: 'notStarted', chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' }), activities2: Array(10).fill().map((_, index) => ({ 
-          status: index >= 6 ? 'notStarted' : 'notStarted',
+          status: 'notStarted',
           chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8'
         })) },
       { id: 17, name: 'Carlos Rodríguez', activities: Array(10).fill({ status: 'pending', chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' }), activities2: Array(10).fill().map((_, index) => ({ 
@@ -337,7 +337,7 @@ export default {
           chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8'
         })) },
       { id: 20, name: 'Elena Torres', activities: Array(10).fill({ status: 'notStarted', chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' }), activities2: Array(10).fill().map((_, index) => ({ 
-          status: index >= 6 ? 'notStarted' : 'notStarted',
+          status: 'notStarted',
           chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8'
         })) }
     ])
