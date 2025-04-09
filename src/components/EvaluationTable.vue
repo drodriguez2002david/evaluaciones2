@@ -176,7 +176,7 @@
                       )
                     }}
                   </h5>
-                  <button type="button" class="btn btn-primary" @click="saveAndCloseModal">GUARDAR</button>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body" v-if="selectedActivity">
                   <iframe :src="selectedActivity.chatUrl" class="w-100" style="height: 400px;"></iframe>
@@ -199,6 +199,10 @@
                       <textarea class="form-control" v-model="selectedActivity.comments"></textarea>
                     </div>
                   </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CERRAR</button>
+                  <button type="button" class="btn btn-primary" @click="saveAndCloseModal">GUARDAR</button>
                 </div>
               </div>
             </div>
