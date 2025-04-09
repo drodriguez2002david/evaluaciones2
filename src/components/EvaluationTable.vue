@@ -183,8 +183,9 @@
                     <h2 class="text-center mb-3" style="font-family: 'Amaranth', sans-serif; font-weight: bold; color: #dc3545;">ACTIVIDAD NO ACTIVADA</h2>
                     <img src="/actividad-bloqueada.png" alt="Actividad bloqueada" style="width: 100px;">
                   </div>
-                  <div v-else-if="selectedActivity.status === 'pending'" class="d-flex align-items-center justify-content-center" style="height: 200px;">
-                    <h2 class="text-center" style="font-family: 'Amaranth', sans-serif; font-weight: bold; color: #dc3545;">ACTIVIDAD NO ENTREGADA POR EL ALUMNO</h2>
+                  <div v-else-if="selectedActivity.status === 'pending'" class="d-flex flex-column align-items-center justify-content-center" style="height: 200px;">
+                    <h2 class="text-center mb-3" style="font-family: 'Amaranth', sans-serif; font-weight: bold; color: #dc3545;">ACTIVIDAD NO ENTREGADA POR EL ALUMNO</h2>
+                    <img src="/NO-ENTREGADA.png" alt="Actividad no entregada" style="width: 100px;">
                   </div>
                   <iframe v-else :src="selectedActivity.chatUrl" class="w-100" style="height: 400px;"></iframe>
                   <div class="mt-3" v-if="selectedActivity.status !== 'notStarted'">
