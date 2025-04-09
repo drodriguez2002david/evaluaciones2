@@ -176,7 +176,7 @@
                       )
                     }}
                   </h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  <button type="button" class="btn btn-primary" @click="saveAndCloseModal">GUARDAR</button>
                 </div>
                 <div class="modal-body" v-if="selectedActivity">
                   <iframe :src="selectedActivity.chatUrl" class="w-100" style="height: 400px;"></iframe>
@@ -297,6 +297,34 @@ export default {
       }
     }
 
+    const saveAndCloseModal = () => {
+      if (selectedActivity.value) {
+        const studentIndex = students.value.findIndex(s => s.name === selectedActivity.value.studentName);
+        const activityIndex = selectedActivity.value.enigmaNumber - 1;
+        
+        if (studentIndex !== -1) {
+          // Determinar si es actividad del primer o segundo tema
+          const isSecondTheme = activityIndex >= 12;
+          const activities = isSecondTheme ? 'activities2' : 'activities';
+          const adjustedIndex = isSecondTheme ? activityIndex - 12 : activityIndex;
+          
+          // Actualizar el estado de la actividad
+          students.value[studentIndex][activities][adjustedIndex] = {
+            ...students.value[studentIndex][activities][adjustedIndex],
+            status: 'teacherEvaluated',
+            grade: selectedActivity.value.teacherGrade,
+            comments: selectedActivity.value.comments
+          };
+        }
+      }
+      
+      // Cerrar el modal
+      const modalElement = document.getElementById('evaluationModal');
+      if (modalElement._bsModal) {
+        modalElement._bsModal.hide();
+      }
+    }
+
     const filteredStudents = computed(() => {
       let result = students.value;
 
@@ -325,7 +353,8 @@ export default {
       toggleStudentFilter,
       searchQuery,
       handleSearch,
-      isExplicaAlumno1
+      isExplicaAlumno1,
+      saveAndCloseModal
     }
   }
 }
