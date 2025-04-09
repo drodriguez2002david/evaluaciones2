@@ -480,7 +480,7 @@ export default {
   border-radius: 50%;
   margin-left: 8px;
   flex-shrink: 0;
-}
+}}
 
 .table-responsive {
   max-height: 80vh;
