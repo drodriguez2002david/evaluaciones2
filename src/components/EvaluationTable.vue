@@ -318,6 +318,10 @@ export default {
         if (index === 3 || index === 15) { // Esquema 1
           chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=14';
         }
+      } else if (type === 'explica') {
+        if (index === 4 || index === 16) { // Explica 1
+          chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=11';
+        }
       }
 
       selectedActivity.value = {
