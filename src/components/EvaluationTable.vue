@@ -321,6 +321,8 @@ export default {
       } else if (type === 'explica') {
         if (index === 4 || index === 16) { // Explica 1
           chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=11';
+        } else if (index === 5 || index === 17) { // Explica 2
+          chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=10';
         }
       }
 
