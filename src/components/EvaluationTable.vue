@@ -306,13 +306,17 @@ export default {
       const type = getCellType(index - 1);
       const explicaNumber = type === 'explica' ? (index === 4 || index === 16 ? 1 : 2) : null;
 
-      // Asignar la URL correcta según el enigma
+      // Asignar la URL correcta según el tipo de actividad
       let chatUrl = activity.chatUrl;
       if (type === 'enigma') {
         if (index === 2 || index === 14) { // Enigma 2
           chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=9';
         } else if (index === 1 || index === 13) { // Enigma 1
           chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8';
+        }
+      } else if (type === 'esquema') {
+        if (index === 3 || index === 15) { // Esquema 1
+          chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=14';
         }
       }
 
