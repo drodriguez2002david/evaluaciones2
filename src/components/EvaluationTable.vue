@@ -167,7 +167,7 @@
                         selectedActivity.type === 'esquema' ? 'ESQUEMA 1: El viaje de una gota de agua' :
                         selectedActivity.type === 'explica' && selectedActivity.explicaNumber === 1 ? 'EXPLICA 1: ¿Por qué los mares no se desbordan?' :
                         selectedActivity.type === 'explica' && selectedActivity.explicaNumber === 2 ? 'EXPLICA EL ALUMNO 2: ¿Por qué el mar es salado?' :
-                        selectedActivity.type === 'coding' && selectedActivity.enigmaNumber === 3 ? 'CODING 1: CONDENSACIÓN' :
+                        selectedActivity.type === 'coding' && (selectedActivity.enigmaNumber === 5 || selectedActivity.enigmaNumber === 17) ? 'CODING 1: CONDENSACIÓN' :
                         'Evaluación'
                       )
                     }}
