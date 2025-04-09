@@ -181,11 +181,11 @@
                 <div class="modal-body" v-if="selectedActivity">
                   <iframe :src="selectedActivity.chatUrl" class="w-100" style="height: 400px;"></iframe>
                   <div class="mt-3">
-                    <div class="mb-3" v-if="selectedActivity.status === 'aiEvaluated'">
+                    <div class="mb-3" v-if="selectedActivity.status === 'aiEvaluated' || selectedActivity.status === 'submitted'">
                       <label class="form-label">Nota AIDIN</label>
                       <div class="input-group">
-                        <input type="number" class="form-control" v-model="selectedActivity.grade" readonly>
-                        <div class="input-group-text">
+                        <input type="text" class="form-control" :value="selectedActivity.status === 'submitted' ? '--' : selectedActivity.grade" readonly>
+                        <div class="input-group-text" v-if="selectedActivity.status === 'aiEvaluated'">
                           <input type="checkbox" v-model="selectedActivity.accepted" @change="handleAcceptedChange">
                         </div>
                       </div>
