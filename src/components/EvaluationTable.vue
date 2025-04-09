@@ -237,7 +237,8 @@ export default {
       { id: 1, name: 'Patricia Álvarez', 
         activities: Array(10).fill().map((_, index) => ({ 
           status: 'pending', 
-          chatUrl: 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8',
+          chatUrl: index === 1 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=9' :
+                  index === 0 ? 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=8' : '',
           text: 'Explica el alumno 1' 
         })), 
         activities2: Array(10).fill().map((_, index) => ({ 
