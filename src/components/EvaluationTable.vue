@@ -264,7 +264,14 @@ export default {
     const openModal = (student, activity, index) => {
       const type = getCellType(index - 1);
       const explicaNumber = type === 'explica' ? (index === 4 || index === 16 ? 1 : 2) : null;
-      selectedActivity.value = {...activity, studentName: student.name, enigmaNumber: index, type, explicaNumber}
+      selectedActivity.value = {
+        ...activity, 
+        studentName: student.name, 
+        enigmaNumber: index, 
+        type, 
+        explicaNumber,
+        teacherGrade: activity.status === 'aiEvaluated' ? activity.grade : ''
+      }
       const modalElement = document.getElementById('evaluationModal')
       if (!modalElement._bsModal) {
         modalElement._bsModal = new bootstrap.Modal(modalElement)
@@ -307,22 +314,23 @@ export default {
         const activityIndex = selectedActivity.value.enigmaNumber - 1;
         
         if (studentIndex !== -1) {
-          // Determinar si es actividad del primer o segundo tema
           const isSecondTheme = activityIndex >= 12;
           const activities = isSecondTheme ? 'activities2' : 'activities';
           const adjustedIndex = isSecondTheme ? activityIndex - 12 : activityIndex;
           
-          // Actualizar el estado de la actividad
+          const finalGrade = selectedActivity.value.accepted ? 
+            selectedActivity.value.grade : 
+            selectedActivity.value.teacherGrade;
+          
           students.value[studentIndex][activities][adjustedIndex] = {
             ...students.value[studentIndex][activities][adjustedIndex],
             status: 'teacherEvaluated',
-            grade: selectedActivity.value.teacherGrade,
+            grade: finalGrade,
             comments: selectedActivity.value.comments
           };
         }
       }
       
-      // Cerrar el modal
       const modalElement = document.getElementById('evaluationModal');
       if (modalElement._bsModal) {
         modalElement._bsModal.hide();
