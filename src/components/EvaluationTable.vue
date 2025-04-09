@@ -559,6 +559,16 @@ export default {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.table thead th.fixed-column {
+  z-index: 3;
+}
+
 @media (max-width: 991px) {
   .legend-container {
     width: 90%;
