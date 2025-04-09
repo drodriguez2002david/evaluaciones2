@@ -206,7 +206,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CERRAR</button>
-                  <button type="button" class="btn btn-primary" @click="saveAndCloseModal">GUARDAR</button>
+                  <button v-if="selectedActivity && selectedActivity.status !== 'notStarted'" type="button" class="btn btn-primary" @click="saveAndCloseModal">GUARDAR</button>
                 </div>
               </div>
             </div>
