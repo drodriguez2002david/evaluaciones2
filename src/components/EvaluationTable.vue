@@ -324,6 +324,10 @@ export default {
         } else if (index === 5 || index === 17) { // Explica 2
           chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=10';
         }
+      } else if (type === 'coding') {
+        if (index === 6 || index === 18) { // Coding 1
+          chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=21';
+        }
       }
 
       selectedActivity.value = {
