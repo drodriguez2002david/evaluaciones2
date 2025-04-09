@@ -336,9 +336,13 @@ export default {
             selectedActivity.value.grade : 
             selectedActivity.value.teacherGrade;
           
+          const newStatus = (selectedActivity.value.teacherGrade !== '' && !isNaN(selectedActivity.value.teacherGrade)) ? 
+            'teacherEvaluated' : 
+            students.value[studentIndex][activities][adjustedIndex].status;
+          
           students.value[studentIndex][activities][adjustedIndex] = {
             ...students.value[studentIndex][activities][adjustedIndex],
-            status: 'teacherEvaluated',
+            status: newStatus,
             grade: finalGrade,
             comments: selectedActivity.value.comments
           };
