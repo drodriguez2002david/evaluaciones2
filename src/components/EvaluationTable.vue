@@ -329,6 +329,8 @@ export default {
           chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=21';
         } else if (index === 7 || index === 19) { // Coding 2
           chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=22';
+        } else if (index === 8 || index === 20) { // Coding 3
+          chatUrl = 'https://courses.steamfuture.academy/tools_steam/aidin-chatbot/gpt/?idchat=23';
         }
       }
 
