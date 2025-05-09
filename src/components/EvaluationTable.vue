@@ -4,7 +4,7 @@
       <div class="row h-100 align-items-center justify-content-center">
         <div class="col-12 col-xl-10">
           <div class="text-center mb-4">
-            <img src="ICONO-AIDIN-512.png" alt="Logo" class="img-fluid mb-3" style="max-width: 75px;">
+            <img src="/ICONO-AIDIN-512.png" alt="Logo" class="img-fluid mb-3" style="max-width: 75px;">
             <h1 style="font-family: 'Amaranth', sans-serif; font-weight: bold; color: #3b56a1;">Evaluaciones</h1>
             <div class="input-group mb-3" style="max-width: 300px; margin: 0 auto;">
               <input 
